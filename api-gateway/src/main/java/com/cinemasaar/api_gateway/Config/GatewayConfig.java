@@ -21,7 +21,6 @@ public class GatewayConfig {
     @Value("${services.movie.url}")              private String movieUrl;
     @Value("${services.recommendation.url}")     private String recommendationUrl;
     @Value("${services.queue.url}")              private String queueUrl;
-    @Value("${services.seat-reservation.url}")   private String seatReservationUrl;
     @Value("${services.booking-management.url}") private String bookingManagementUrl;
 
     @Bean
@@ -33,9 +32,10 @@ public class GatewayConfig {
                         .filters(this::common)
                         .uri(authUrl))
 
+                // movies-service: catalogue, theaters, screens, physical seats, showtimes
                 .route("movie-service", r -> r
                         .path("/api/movies/**", "/api/showtimes/**", "/api/theaters/**",
-                              "/api/admin/movies/**", "/api/admin/showtimes/**")
+                              "/api/screens/**", "/api/seats/**")
                         .filters(this::common)
                         .uri(movieUrl))
 
@@ -54,11 +54,6 @@ public class GatewayConfig {
                               "/api/v1/admin/showtimes/*/seats")
                         .filters(this::common)
                         .uri(queueUrl))
-
-                .route("seat-reservation-service", r -> r
-                        .path("/api/reservations/**", "/api/seats/**")
-                        .filters(this::common)
-                        .uri(seatReservationUrl))
 
                 // bookings service: booking history, tickets, cancellations, audit logs
                 .route("booking-management-service", r -> r

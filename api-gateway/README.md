@@ -13,7 +13,6 @@ Frontend ──▶ api-gateway :8000 ──┬──▶ auth-service :8081
                                  ├──▶ movie-service :8082
                                  ├──▶ recommendation-service :8083
                                  ├──▶ queue-service :8084
-                                 ├──▶ booking-service (seats) :8085
                                  └──▶ bookings (booking management) :8086
 ```
 
@@ -35,10 +34,9 @@ Frontend ──▶ api-gateway :8000 ──┬──▶ auth-service :8081
 | Service | Port | Paths |
 |---|---|---|
 | auth-service | 8081 | `/api/auth/**`, `/api/users/**` |
-| movie-service | 8082 | `/api/movies/**`, `/api/showtimes/**`, `/api/theaters/**`, `/api/admin/movies/**`, `/api/admin/showtimes/**` |
+| movie-service | 8082 | `/api/movies/**`, `/api/showtimes/**`, `/api/theaters/**`, `/api/screens/**`, `/api/seats/**` |
 | recommendation-service | 8083 | `/api/recommendations/**` |
 | queue-service | 8084 | `/api/v1/queue/**`, `/api/v1/carts/**`, `/api/v1/bookings/**`, `/api/v1/payments/**`, `/api/v1/addons/**`, `/api/v1/showtimes/*/seats`, `/api/v1/admin/showtimes/*/seats` |
-| booking-service (seats) | 8085 | `/api/reservations/**`, `/api/seats/**` |
 | bookings (booking management) | 8086 | `/api/bookings/**`, `/api/admin/bookings/**`, `/api/admin/audit-logs/**`, `/api/tickets/**` |
 
 Requests to a path not listed here return `404`. Routes are defined in `Config/GatewayConfig.java`.
@@ -50,7 +48,8 @@ Requests to a path not listed here return `404`. Routes are defined in `Config/G
 | Path | Access |
 |---|---|
 | `/api/auth/**` | Public |
-| `GET /api/movies/**`, `GET /api/showtimes/**` | Public |
+| `GET` on `/api/movies/**`, `/api/showtimes/**`, `/api/theaters/**`, `/api/screens/**`, `/api/seats/**` | Public |
+| Any other method on those paths (import, create, edit, delete), and `/api/movies/omdb/**` | `ADMIN` only |
 | `GET /api/v1/showtimes/*/seats`, `GET /api/v1/addons/**` | Public |
 | `/api/admin/**`, `/api/v1/admin/**` | `ADMIN` only (`403` otherwise) |
 | All other paths | Any authenticated user (`401` otherwise) |
@@ -123,7 +122,6 @@ X-User-Role: ADMIN
 | `MOVIE_SERVICE_URL` | | `http://localhost:8082` |
 | `RECOMMENDATION_SERVICE_URL` | | `http://localhost:8083` |
 | `QUEUE_SERVICE_URL` | | `http://localhost:8084` |
-| `SEAT_RESERVATION_SERVICE_URL` | | `http://localhost:8085` |
 | `BOOKING_MANAGEMENT_SERVICE_URL` | | `http://localhost:8086` |
 
 In docker-compose, service URLs use container names, e.g. `AUTH_SERVICE_URL=http://auth-service:8081`.
