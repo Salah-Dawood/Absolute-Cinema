@@ -1,0 +1,207 @@
+name: cinemasaar
+
+x-mongo-uri: &mongo-uri "mongodb://mongo:27017/movie_db?replicaSet=rs0"
+
+services:
+  # ---------------------------------------------------------------------------
+  # MongoDB (single-node replica set so transactions work)
+  # ---------------------------------------------------------------------------
+  mongo:
+    image: mongo:7.0
+    container_name: cinemasaar-mongo
+    restart: unless-stopped
+    command: ["--replSet", "rs0", "--bind_ip_all"]
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "quit(db.adminCommand('ping').ok === 1 ? 0 : 1)"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks:
+      - cinemasaar
+
+  # One-shot container: initiates the replica set and exits.
+  # Services wait for this to finish so Mongo is writable before they boot.
+  mongo-init:
+    image: mongo:7.0
+    container_name: cinemasaar-mongo-init
+    depends_on:
+      mongo:
+        condition: service_healthy
+    entrypoint:
+      - mongosh
+      - --host
+      - mongo:27017
+      - --eval
+      - |
+        try {
+          rs.status();
+        } catch (e) {
+          if (e.code !== 94) throw e;
+          const result = rs.initiate({_id: "rs0", members: [{_id: 0, host: "mongo:27017"}]});
+          if (result.ok !== 1) throw new Error(JSON.stringify(result));
+        }
+        for (let attempt = 0; attempt < 60; attempt++) {
+          if (db.hello().isWritablePrimary) quit(0);
+          sleep(1000);
+        }
+        throw new Error("MongoDB did not become writable within 60 seconds");
+    restart: "no"
+    networks:
+      - cinemasaar
+
+  # ---------------------------------------------------------------------------
+  # API Gateway (public entry point)
+  # ---------------------------------------------------------------------------
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    image: cinemasaar/api-gateway:latest
+    container_name: cinemasaar-api-gateway
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      JWT_SECRET: ${JWT_SECRET:-cinemasaar-dev-secret-key-change-me-32chars!}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000,http://localhost:5173}
+      AUTH_SERVICE_URL: http://auth-service:8081
+      MOVIE_SERVICE_URL: http://movies-service:8082
+      RECOMMENDATION_SERVICE_URL: http://recommendation-service:8083
+      QUEUE_SERVICE_URL: http://queue-service:8084
+      SEAT_RESERVATION_SERVICE_URL: http://queue-service:8084
+      BOOKING_MANAGEMENT_SERVICE_URL: http://booking-service:8086
+    depends_on:
+      auth-service:
+        condition: service_started
+      movies-service:
+        condition: service_started
+      recommendation-service:
+        condition: service_started
+      queue-service:
+        condition: service_started
+      booking-service:
+        condition: service_started
+    networks:
+      - cinemasaar
+
+  # ---------------------------------------------------------------------------
+  # Auth Service
+  # ---------------------------------------------------------------------------
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    image: cinemasaar/auth-service:latest
+    container_name: cinemasaar-auth-service
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      MONGO_DB: *mongo-uri
+      JWT_SECRET: ${JWT_SECRET:-cinemasaar-dev-secret-key-change-me-32chars!}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@cinemasaar.com}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-Admin12345}
+    depends_on:
+      mongo-init:
+        condition: service_completed_successfully
+    networks:
+      - cinemasaar
+
+  # ---------------------------------------------------------------------------
+  # Movies Service
+  # ---------------------------------------------------------------------------
+  movies-service:
+    build:
+      context: ./movies-service
+      dockerfile: Dockerfile
+    image: cinemasaar/movies-service:latest
+    container_name: cinemasaar-movies-service
+    restart: unless-stopped
+    ports:
+      - "8082:8082"
+    environment:
+      MONGODB_URI: *mongo-uri
+      MONGO_DATABASE: movie_db
+      OMDB_API_KEY: ${OMDB_API_KEY:-}
+      BOOKING_SERVICE_URL: http://booking-service:8086
+    depends_on:
+      mongo-init:
+        condition: service_completed_successfully
+    networks:
+      - cinemasaar
+
+  # ---------------------------------------------------------------------------
+  # Recommendation Service
+  # ---------------------------------------------------------------------------
+  recommendation-service:
+    build:
+      context: ./recommendation-service
+      dockerfile: Dockerfile
+    image: cinemasaar/recommendation-service:latest
+    container_name: cinemasaar-recommendation-service
+    restart: unless-stopped
+    ports:
+      - "8083:8083"
+    environment:
+      MOVIE_SERVICE_URL: http://movies-service:8082
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    depends_on:
+      movies-service:
+        condition: service_started
+    networks:
+      - cinemasaar
+
+  # ---------------------------------------------------------------------------
+  # Queue Service (admission, seat holds, carts, checkout, payment)
+  # ---------------------------------------------------------------------------
+  queue-service:
+    build:
+      context: ./queue
+      dockerfile: Dockerfile
+    image: cinemasaar/queue-service:latest
+    container_name: cinemasaar-queue-service
+    restart: unless-stopped
+    ports:
+      - "8084:8084"
+    environment:
+      MONGO_URI: *mongo-uri
+      MONGO_DATABASE: movie_db
+    depends_on:
+      mongo-init:
+        condition: service_completed_successfully
+    networks:
+      - cinemasaar
+
+  # ---------------------------------------------------------------------------
+  # Booking Service (bookings, tickets, emails)
+  # ---------------------------------------------------------------------------
+  booking-service:
+    build:
+      context: ./bookings
+      dockerfile: Dockerfile
+    image: cinemasaar/booking-service:latest
+    container_name: cinemasaar-booking-service
+    restart: unless-stopped
+    ports:
+      - "8086:8086"
+    environment:
+      MONGODB_URI: *mongo-uri
+      MONGO_DATABASE: movie_db
+      MAIL_USERNAME: ${MAIL_USERNAME:-}
+      MAIL_PASSWORD: ${MAIL_PASSWORD:-}
+    depends_on:
+      mongo-init:
+        condition: service_completed_successfully
+    networks:
+      - cinemasaar
+
+networks:
+  cinemasaar:
+    driver: bridge
+
+volumes:
+  mongo-data:
