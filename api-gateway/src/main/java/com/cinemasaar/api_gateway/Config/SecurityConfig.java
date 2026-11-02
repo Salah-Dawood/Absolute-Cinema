@@ -46,14 +46,20 @@ import java.util.List;
  *
  * Rules:
  *   - /api/auth/**                     public (register / login)
- *   - GET /api/movies/**, /showtimes/** public (browse without logging in)
+ *   - GET on the movie catalogue       public (movies, showtimes, theaters, screens, seats)
  *   - GET seat maps and add-on list    public
+ *   - catalogue writes, OMDb lookups   ADMIN only
  *   - /api/admin/**, /api/v1/admin/**  ADMIN only
  *   - everything else                  any valid token
  */
 @Configuration
 @EnableWebFluxSecurity
 public class SecurityConfig {
+
+    /** movies-service paths: GET is public, every other method requires ADMIN. */
+    private static final String[] CATALOGUE = {
+            "/api/movies/**", "/api/showtimes/**", "/api/theaters/**", "/api/screens/**", "/api/seats/**"
+    };
 
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http,
@@ -76,8 +82,13 @@ public class SecurityConfig {
                 .authorizeExchange(auth -> auth
                         .pathMatchers(HttpMethod.OPTIONS).permitAll()          // CORS preflight
                         .pathMatchers("/api/auth/**").permitAll()
-                        .pathMatchers(HttpMethod.GET, "/api/movies/**", "/api/showtimes/**",
-                                "/api/v1/showtimes/*/seats", "/api/v1/addons/**").permitAll()
+                        // OMDb lookups spend the shared API quota: admins only
+                        .pathMatchers("/api/movies/omdb/**").hasRole("ADMIN")
+                        // Browsing the catalogue needs no login
+                        .pathMatchers(HttpMethod.GET, CATALOGUE).permitAll()
+                        .pathMatchers(HttpMethod.GET, "/api/v1/showtimes/*/seats", "/api/v1/addons/**").permitAll()
+                        // Any other method on the catalogue (import, create, edit, delete) is admin-only
+                        .pathMatchers(CATALOGUE).hasRole("ADMIN")
                         .pathMatchers("/api/admin/**", "/api/v1/admin/**").hasRole("ADMIN")
                         .anyExchange().authenticated()
                 )

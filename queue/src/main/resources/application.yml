@@ -8,7 +8,7 @@ spring:
     mongodb:
       uri: ${MONGO_URI}
       database: ${MONGO_DATABASE:movie_db}
-      auto-index-creation: true 1
+      auto-index-creation: true
 
 app:
   booking:
