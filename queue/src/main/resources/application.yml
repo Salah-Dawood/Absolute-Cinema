@@ -1,0 +1,28 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: queue
+  mongodb:
+    uri: ${MONGO_URI:mongodb+srv://ahmed:ahmed123456789@moviebookingcluster.ubmxht7.mongodb.net/movie_db?appName=MovieBookingCluster}
+  data:
+    mongodb:
+      auto-index-creation: true
+
+app:
+  booking:
+    max-active-sessions-per-showtime: 8
+    admission-ttl: 5m
+    cart-ttl: 15m
+    max-seats-per-cart: 8
+    max-addons-per-seat: 5
+    admission-batch-size: 32
+    seat-operation-timeout: 10s
+    admission-interval-ms: 1000
+    admission-expiry-interval-ms: 5000
+    cart-expiry-interval-ms: 2000
+    pool:
+      core-size: 4
+      max-size: 8
+      queue-capacity: 200
