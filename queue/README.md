@@ -74,8 +74,8 @@ docker compose up -d          # Mongo replica set + one-off rs.initiate
 .\mvnw.cmd spring-boot:run    # http://localhost:8084
 ```
 
-The URI default is `mongodb://localhost:27017/cinemasaar?replicaSet=rs0`; override
-with `MONGO_URI`.
+Set `MONGO_URI` before starting (there is no default). For the local replica set:
+`mongodb://localhost:27017/cinemasaar?replicaSet=rs0`.
 
 ## Curl walkthrough
 

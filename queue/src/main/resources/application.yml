@@ -4,11 +4,11 @@ server:
 spring:
   application:
     name: queue
-  mongodb:
-    uri: ${MONGO_URI:mongodb+srv://ahmed:ahmed123456789@moviebookingcluster.ubmxht7.mongodb.net/movie_db?appName=MovieBookingCluster}
   data:
     mongodb:
-      auto-index-creation: true
+      uri: ${MONGO_URI}
+      database: ${MONGO_DATABASE:movie_db}
+      auto-index-creation: true 1
 
 app:
   booking:

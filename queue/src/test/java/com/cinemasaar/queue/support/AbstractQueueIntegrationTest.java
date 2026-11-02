@@ -20,16 +20,15 @@ import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.resttestclient.TestRestTemplate;
-import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureTestRestTemplate;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.testcontainers.mongodb.MongoDBContainer;
+import org.testcontainers.containers.MongoDBContainer;
 import org.testcontainers.utility.DockerImageName;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -49,11 +48,11 @@ import static org.assertj.core.api.Assertions.fail;
                 "app.booking.cart-expiry-interval-ms=200",
                 "app.booking.max-active-sessions-per-showtime=4"
         })
-@AutoConfigureTestRestTemplate
 public abstract class AbstractQueueIntegrationTest {
 
     private static final MongoDBContainer MONGO =
-            new MongoDBContainer(DockerImageName.parse("mongo:7.0")).withReplicaSet();
+            // Testcontainers 1.x starts MongoDBContainer as a single-node replica set by default.
+            new MongoDBContainer(DockerImageName.parse("mongo:7.0"));
 
     static {
         MONGO.start();
@@ -63,7 +62,7 @@ public abstract class AbstractQueueIntegrationTest {
         String uri = "mongodb://" + MONGO.getHost() + ":" + MONGO.getMappedPort(27017)
                 + "/test?directConnection=true";
         System.out.println("[tests] MongoDB replica set at " + uri);
-        System.setProperty("spring.mongodb.uri", uri);
+        System.setProperty("spring.data.mongodb.uri", uri);
     }
 
     @Autowired

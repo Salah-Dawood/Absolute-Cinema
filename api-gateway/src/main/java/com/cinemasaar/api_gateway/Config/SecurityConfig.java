@@ -47,7 +47,8 @@ import java.util.List;
  * Rules:
  *   - /api/auth/**                     public (register / login)
  *   - GET /api/movies/**, /showtimes/** public (browse without logging in)
- *   - /api/admin/**                    ADMIN only
+ *   - GET seat maps and add-on list    public
+ *   - /api/admin/**, /api/v1/admin/**  ADMIN only
  *   - everything else                  any valid token
  */
 @Configuration
@@ -75,8 +76,9 @@ public class SecurityConfig {
                 .authorizeExchange(auth -> auth
                         .pathMatchers(HttpMethod.OPTIONS).permitAll()          // CORS preflight
                         .pathMatchers("/api/auth/**").permitAll()
-                        .pathMatchers(HttpMethod.GET, "/api/movies/**", "/api/showtimes/**").permitAll()
-                        .pathMatchers("/api/admin/**").hasRole("ADMIN")
+                        .pathMatchers(HttpMethod.GET, "/api/movies/**", "/api/showtimes/**",
+                                "/api/v1/showtimes/*/seats", "/api/v1/addons/**").permitAll()
+                        .pathMatchers("/api/admin/**", "/api/v1/admin/**").hasRole("ADMIN")
                         .anyExchange().authenticated()
                 )
 

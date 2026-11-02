@@ -26,7 +26,7 @@ Frontend ──▶ api-gateway :8000 ──┬──▶ auth-service :8081
 - **Routing**: forwards each request to a service based on its path. The path is not changed: `GET :8000/api/movies/5` → `GET movie-service:8082/api/movies/5`.
 - **JWT validation**: validates tokens issued by auth-service in one place.
 - **User headers**: passes the authenticated user to services as `X-User-Id`, `X-User-Role` and `X-User-Email`.
-- **Admin protection**: all `/api/admin/**` paths require role `ADMIN`.
+- **Admin protection**: all `/api/admin/**` and `/api/v1/admin/**` paths require role `ADMIN`.
 - **CORS**: allows the frontend to call the API from the browser.
 - **Request logging**: logs every request, e.g. `POST /api/auth/login -> 200 (85 ms)`.
 
@@ -39,7 +39,7 @@ Frontend ──▶ api-gateway :8000 ──┬──▶ auth-service :8081
 | auth-service | 8081 | `/api/auth/**`, `/api/users/**` |
 | movie-service | 8082 | `/api/movies/**`, `/api/showtimes/**`, `/api/theaters/**`, `/api/admin/movies/**`, `/api/admin/showtimes/**` |
 | recommendation-service | 8083 | `/api/recommendations/**` |
-| queue-service | 8084 | `/api/queue/**` |
+| queue-service | 8084 | `/api/v1/queue/**`, `/api/v1/carts/**`, `/api/v1/bookings/**`, `/api/v1/payments/**`, `/api/v1/addons/**`, `/api/v1/showtimes/*/seats`, `/api/v1/admin/showtimes/*/seats` |
 | booking-service (seats) | 8085 | `/api/reservations/**`, `/api/seats/**` |
 | booking-management-service | 8086 | `/api/bookings/**`, `/api/addons/**`, `/api/payments/**`, `/api/admin/bookings/**`, `/api/admin/addons/**` |
 | audit-service | 8087 | `/api/admin/audit/**` |
@@ -55,7 +55,8 @@ Requests to a path not listed here return `404`. Routes are defined in `Config/G
 |---|---|
 | `/api/auth/**` | Public |
 | `GET /api/movies/**`, `GET /api/showtimes/**` | Public |
-| `/api/admin/**` | `ADMIN` only (`403` otherwise) |
+| `GET /api/v1/showtimes/*/seats`, `GET /api/v1/addons/**` | Public |
+| `/api/admin/**`, `/api/v1/admin/**` | `ADMIN` only (`403` otherwise) |
 | All other paths | Any authenticated user (`401` otherwise) |
 
 ---
@@ -109,7 +110,7 @@ X-User-Role: ADMIN
 | Status | Cause |
 |---|---|
 | `401` | Missing, invalid or expired token |
-| `403` | Valid token without `ADMIN` role on an `/api/admin/**` path |
+| `403` | Valid token without `ADMIN` role on an admin path |
 | `404` | No route matches the path |
 | `500` / `503` | Target service is not running |
 

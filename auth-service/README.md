@@ -5,10 +5,9 @@ Every other service relies on the token this service issues to know *who* the us
 
 | | |
 |---|---|
-| **Owner** | Member 1 |
 | **Port** | `8081` |
 | **Base path** | `/api/auth`, `/api/users` |
-| **Database** | MongoDB Atlas, database `movie_auth`, collection `users` |
+| **Database** | MongoDB Atlas, database `movie_db`, collection `users` |
 | **Stack** | Java 17, Spring Boot 3.5.6, Spring Security, Spring Data MongoDB, jjwt 0.12.6 |
 | **Package** | `com.cinemasaar.auth_service` |
 
@@ -192,7 +191,7 @@ All errors return the same JSON shape:
 
 ---
 
-## For teammates: using the token in your service
+## Integration with other services
 
 ### Token contents
 
@@ -219,7 +218,7 @@ The JWT is signed with **HS256** using the shared `JWT_SECRET`. Decoded payload:
 
 ### Through the gateway (recommended)
 
-The **api-gateway** checks the token before forwarding the request, and passes the user to your service as headers:
+The **api-gateway** checks the token before forwarding the request, and passes the user to downstream services as headers:
 
 | Header | Example |
 |---|---|
@@ -227,7 +226,7 @@ The **api-gateway** checks the token before forwarding the request, and passes t
 | `X-User-Role` | `USER` |
 | `X-User-Email` | `sara@example.com` |
 
-Read them in your controller:
+Reading them in a controller:
 
 ```java
 @GetMapping("/my-bookings")
@@ -236,11 +235,9 @@ public List<Booking> myBookings(@RequestHeader("X-User-Id") String userId) {
 }
 ```
 
-> These headers will be final once the gateway is done. Until then you can test your service directly by setting them manually in Postman.
-
 ### Admin-only endpoints
 
-Put admin endpoints under `/api/admin/**` (e.g. `/api/admin/showtimes`, `/api/admin/bookings`). The gateway will block non-admins on those paths with `403`.
+Admin endpoints live under `/api/admin/**` (e.g. `/api/admin/showtimes`, `/api/admin/bookings`). The gateway blocks non-admins on those paths with `403`.
 
 ### Getting a token for testing
 
@@ -257,17 +254,14 @@ Put admin endpoints under `/api/admin/**` (e.g. `/api/admin/showtimes`, `/api/ad
 
 | Variable | Required | Description |
 |---|---|---|
-| `MONGODB_URI` | ✅ | Atlas connection string, e.g. `mongodb+srv://user:pass@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority` |
+| `MONGO_DB` | ✅ | Atlas connection string, e.g. `mongodb+srv://user:pass@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority` |
 | `JWT_SECRET` | ✅ | Random string, **at least 32 characters**. **Must be the same in api-gateway.** |
-| `MONGODB_DATABASE` | | Default `movie_auth` |
-| `JWT_EXPIRATION_MS` | | Default `86400000` (24h) |
-| `AUTH_SERVICE_PORT` | | Default `8081` |
 | `ADMIN_EMAIL` | | Email of the admin created on startup |
 | `ADMIN_PASSWORD` | | Password of that admin |
 
 **IntelliJ:** Run → Edit Configurations → AuthApplication → Environment variables:
 ```
-MONGODB_URI=mongodb+srv://...;JWT_SECRET=...;ADMIN_EMAIL=admin@cinema.com;ADMIN_PASSWORD=admin12345
+MONGO_DB=mongodb+srv://...;JWT_SECRET=...;ADMIN_EMAIL=admin@cinema.com;ADMIN_PASSWORD=admin12345
 ```
 
 > ⚠️ Never commit real values. Spring does not read `.env` files automatically.
