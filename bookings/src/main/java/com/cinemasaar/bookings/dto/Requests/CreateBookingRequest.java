@@ -1,4 +1,4 @@
-package dto.Requests;
+package com.cinemasaar.bookings.dto.Requests;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;

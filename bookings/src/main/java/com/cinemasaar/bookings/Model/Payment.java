@@ -1,7 +1,7 @@
-package model;
+package com.cinemasaar.bookings.Model;
 
 
-import Enums.PaymentStatus;
+import com.cinemasaar.bookings.Enums.PaymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package dto.Requests;
+package com.cinemasaar.bookings.dto.Requests;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

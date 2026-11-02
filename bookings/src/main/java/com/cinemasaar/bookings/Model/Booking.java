@@ -1,6 +1,6 @@
-package model;
+package com.cinemasaar.bookings.Model;
 
-import Enums.BookingStatus;
+import com.cinemasaar.bookings.Enums.BookingStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

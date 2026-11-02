@@ -1,4 +1,4 @@
-package model;
+package com.cinemasaar.bookings.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package Repository;
+package com.cinemasaar.bookings.Repository;
 
-import Enums.BookingStatus;
-import model.Booking;
+import com.cinemasaar.bookings.Enums.BookingStatus;
+import com.cinemasaar.bookings.Model.Booking;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Collection;

@@ -1,7 +1,7 @@
-package dto.Response;
+package com.cinemasaar.bookings.dto.Response;
 
-import Enums.BookingStatus;
-import Enums.PaymentStatus;
+import com.cinemasaar.bookings.Enums.BookingStatus;
+import com.cinemasaar.bookings.Enums.PaymentStatus;
 
 import java.math.BigDecimal;
 

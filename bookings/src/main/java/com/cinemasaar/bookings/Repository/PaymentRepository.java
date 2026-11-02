@@ -1,7 +1,7 @@
-package Repository;
+package com.cinemasaar.bookings.Repository;
 
-import Enums.PaymentStatus;
-import model.Payment;
+import com.cinemasaar.bookings.Enums.PaymentStatus;
+import com.cinemasaar.bookings.Model.Payment;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

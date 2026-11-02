@@ -1,6 +1,7 @@
-package Service;
+package com.cinemasaar.bookings.Service;
 
-import Repository.BookingRepository;
+import com.cinemasaar.bookings.Repository.AddonRepository;
+import com.cinemasaar.bookings.Repository.BookingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

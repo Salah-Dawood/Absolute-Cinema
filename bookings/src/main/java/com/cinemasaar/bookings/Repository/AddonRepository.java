@@ -1,6 +1,6 @@
-package Repository;
+package com.cinemasaar.bookings.Repository;
 
-import model.Addon;
+import com.cinemasaar.bookings.Model.Addon;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
