@@ -14,7 +14,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/admin/bookings")
+@RequestMapping("/api/admin/bookings")
 public class AdminBookingController {
 
     private final BookingManagementService bookingService;
@@ -32,7 +32,7 @@ public class AdminBookingController {
     @PostMapping("/{id}/cancel")
     public Booking cancel(
             @PathVariable String id,
-            @RequestHeader(value = "X-User-Id", defaultValue = "test-admin") String adminUserId,
+            @RequestHeader("X-User-Id") String adminUserId,
             @RequestHeader(value = "X-User-Role", defaultValue = "USER") String role,
             @Valid @RequestBody CancelBookingRequest request) {
         AdminGuard.requireAdmin(role);

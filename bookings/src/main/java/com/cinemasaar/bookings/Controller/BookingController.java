@@ -19,7 +19,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/bookings")
+@RequestMapping("/api/bookings")
 public class BookingController {
 
     private final BookingManagementService bookingService;
@@ -29,14 +29,14 @@ public class BookingController {
 
     @GetMapping("/me")
     public List<Booking> myBookings(
-            @RequestHeader(value = "X-User-Id", defaultValue = "test-user") String userId) {
+            @RequestHeader("X-User-Id") String userId) {
         return bookingService.getMyBookings(userId);
     }
 
     @GetMapping("/{id}")
     public Booking getOne(
             @PathVariable String id,
-            @RequestHeader(value = "X-User-Id", defaultValue = "test-user") String userId,
+            @RequestHeader("X-User-Id") String userId,
             @RequestHeader(value = "X-User-Role", defaultValue = "USER") String role) {
         return bookingService.getBooking(id, userId, role);
     }
@@ -44,7 +44,7 @@ public class BookingController {
     @GetMapping("/{id}/ticket")
     public TicketResponse ticket(
             @PathVariable String id,
-            @RequestHeader(value = "X-User-Id", defaultValue = "test-user") String userId,
+            @RequestHeader("X-User-Id") String userId,
             @RequestHeader(value = "X-User-Role", defaultValue = "USER") String role) {
         Booking booking = bookingService.getBooking(id, userId, role);
         Ticket ticket = ticketService.getOrIssue(booking);
@@ -54,7 +54,7 @@ public class BookingController {
     @PostMapping("/{id}/ticket/email")
     public Notification emailTicket(
             @PathVariable String id,
-            @RequestHeader(value = "X-User-Id", defaultValue = "test-user") String userId,
+            @RequestHeader("X-User-Id") String userId,
             @RequestHeader(value = "X-User-Role", defaultValue = "USER") String role,
             @RequestHeader(value = "X-User-Email", required = false) String headerEmail,
             @Valid @RequestBody(required = false) SendTicketEmailRequest request) {
@@ -74,7 +74,7 @@ public class BookingController {
     @GetMapping("/{id}/notifications")
     public List<Notification> notifications(
             @PathVariable String id,
-            @RequestHeader(value = "X-User-Id", defaultValue = "test-user") String userId,
+            @RequestHeader("X-User-Id") String userId,
             @RequestHeader(value = "X-User-Role", defaultValue = "USER") String role) {
         bookingService.getBooking(id, userId, role);
         return notificationService.getForBooking(id);

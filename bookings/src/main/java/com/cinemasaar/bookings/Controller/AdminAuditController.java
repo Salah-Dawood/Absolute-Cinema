@@ -10,7 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/admin/audit-logs")
+@RequestMapping("/api/admin/audit-logs")
 public class AdminAuditController {
 
     private final AuditService auditService;
@@ -18,7 +18,7 @@ public class AdminAuditController {
     @GetMapping
     public List<AdminAuditLog> logs(
             @RequestParam(required = false) String targetId,
-            @RequestHeader(value = "X-User-Id", defaultValue = "test-admin") String adminUserId,
+            @RequestHeader("X-User-Id") String adminUserId,
             @RequestHeader(value = "X-User-Role", defaultValue = "USER") String role) {
         AdminGuard.requireAdmin(role);
         List<AdminAuditLog> logs = auditService.getLogs(targetId);

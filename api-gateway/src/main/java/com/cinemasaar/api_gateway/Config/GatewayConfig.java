@@ -23,20 +23,16 @@ public class GatewayConfig {
     @Value("${services.queue.url}")              private String queueUrl;
     @Value("${services.seat-reservation.url}")   private String seatReservationUrl;
     @Value("${services.booking-management.url}") private String bookingManagementUrl;
-    @Value("${services.audit.url}")              private String auditUrl;
-    @Value("${services.notification.url}")       private String notificationUrl;
 
     @Bean
     public RouteLocator routes(RouteLocatorBuilder builder) {
         return builder.routes()
 
-                // Member 1
                 .route("auth-service", r -> r
                         .path("/api/auth/**", "/api/users/**")
                         .filters(this::common)
                         .uri(authUrl))
 
-                // Member 2
                 .route("movie-service", r -> r
                         .path("/api/movies/**", "/api/showtimes/**", "/api/theaters/**",
                               "/api/admin/movies/**", "/api/admin/showtimes/**")
@@ -48,7 +44,6 @@ public class GatewayConfig {
                         .filters(this::common)
                         .uri(recommendationUrl))
 
-                // Member 3
                 // queue-service uses /api/v1/... and currently also handles
                 // seat holds, checkout, payments and add-ons
                 .route("queue-service", r -> r
@@ -65,22 +60,12 @@ public class GatewayConfig {
                         .filters(this::common)
                         .uri(seatReservationUrl))
 
-                // Member 4
+                // bookings service: booking history, tickets, cancellations, audit logs
                 .route("booking-management-service", r -> r
-                        .path("/api/bookings/**", "/api/addons/**", "/api/payments/**",
-                              "/api/admin/bookings/**", "/api/admin/addons/**")
+                        .path("/api/bookings/**", "/api/admin/bookings/**",
+                              "/api/admin/audit-logs/**", "/api/tickets/**")
                         .filters(this::common)
                         .uri(bookingManagementUrl))
-
-                .route("audit-service", r -> r
-                        .path("/api/admin/audit/**")
-                        .filters(this::common)
-                        .uri(auditUrl))
-
-                .route("notification-service", r -> r
-                        .path("/api/tickets/**", "/api/notifications/**")
-                        .filters(this::common)
-                        .uri(notificationUrl))
 
                 .build();
     }

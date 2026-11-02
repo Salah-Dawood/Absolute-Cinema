@@ -14,9 +14,7 @@ Frontend ──▶ api-gateway :8000 ──┬──▶ auth-service :8081
                                  ├──▶ recommendation-service :8083
                                  ├──▶ queue-service :8084
                                  ├──▶ booking-service (seats) :8085
-                                 ├──▶ booking-management-service :8086
-                                 ├──▶ audit-service :8087
-                                 └──▶ notification-service :8088
+                                 └──▶ bookings (booking management) :8086
 ```
 
 ---
@@ -41,9 +39,7 @@ Frontend ──▶ api-gateway :8000 ──┬──▶ auth-service :8081
 | recommendation-service | 8083 | `/api/recommendations/**` |
 | queue-service | 8084 | `/api/v1/queue/**`, `/api/v1/carts/**`, `/api/v1/bookings/**`, `/api/v1/payments/**`, `/api/v1/addons/**`, `/api/v1/showtimes/*/seats`, `/api/v1/admin/showtimes/*/seats` |
 | booking-service (seats) | 8085 | `/api/reservations/**`, `/api/seats/**` |
-| booking-management-service | 8086 | `/api/bookings/**`, `/api/addons/**`, `/api/payments/**`, `/api/admin/bookings/**`, `/api/admin/addons/**` |
-| audit-service | 8087 | `/api/admin/audit/**` |
-| notification-service | 8088 | `/api/tickets/**`, `/api/notifications/**` |
+| bookings (booking management) | 8086 | `/api/bookings/**`, `/api/admin/bookings/**`, `/api/admin/audit-logs/**`, `/api/tickets/**` |
 
 Requests to a path not listed here return `404`. Routes are defined in `Config/GatewayConfig.java`.
 
@@ -129,8 +125,6 @@ X-User-Role: ADMIN
 | `QUEUE_SERVICE_URL` | | `http://localhost:8084` |
 | `SEAT_RESERVATION_SERVICE_URL` | | `http://localhost:8085` |
 | `BOOKING_MANAGEMENT_SERVICE_URL` | | `http://localhost:8086` |
-| `AUDIT_SERVICE_URL` | | `http://localhost:8087` |
-| `NOTIFICATION_SERVICE_URL` | | `http://localhost:8088` |
 
 In docker-compose, service URLs use container names, e.g. `AUTH_SERVICE_URL=http://auth-service:8081`.
 
