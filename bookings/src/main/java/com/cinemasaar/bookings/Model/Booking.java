@@ -1,8 +1,6 @@
 package com.cinemasaar.bookings.Model;
 
 import com.cinemasaar.bookings.Enums.BookingStatus;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -12,34 +10,27 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 
-
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-@Builder
+@NoArgsConstructor
 @Document("bookings")
 public class Booking {
-
     @Id
     private String id;
+    private String cartId;
     private String userId;
     private String showtimeId;
-    private String seatHoldId;
-    private List<BookingSeat> seats;
-    private List<BookingAddon> addons;
-    private BigDecimal seatsTotal;
-    private BigDecimal addonsTotal;
-    private BigDecimal totalAmount;
+    private String paymentIntentId;
     private BookingStatus status;
-    //seat hold expiry
+    private List<BookedSeat> seats;
+    private BigDecimal seatTotal;
+    private BigDecimal addonTotal;
+    private BigDecimal total;
+    private Instant createdAt;
     private Instant expiresAt;
-    //set when payment succeeds
     private Instant confirmedAt;
-    //set on admin cancellation
+    private Instant expiredAt;
+
     private Instant cancelledAt;
     private String cancellationReason;
-    //the admin who canceled it
     private String cancelledByUserId;
-    private Instant createdAt;
-    private Instant updatedAt;
 }
