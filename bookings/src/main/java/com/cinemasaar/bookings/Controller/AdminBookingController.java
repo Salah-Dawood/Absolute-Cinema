@@ -4,6 +4,7 @@ import com.cinemasaar.bookings.Enums.BookingStatus;
 import com.cinemasaar.bookings.Model.Booking;
 import com.cinemasaar.bookings.Service.BookingManagementService;
 import com.cinemasaar.bookings.Service.CancellationService;
+import com.cinemasaar.bookings.Service.NotificationService;
 import com.cinemasaar.bookings.dto.Requests.CancelBookingRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,7 @@ public class AdminBookingController {
 
     private final BookingManagementService bookingService;
     private final CancellationService cancellationService;
+    private final NotificationService notificationService;
 
     @GetMapping
     public List<Booking> all(
@@ -34,6 +36,8 @@ public class AdminBookingController {
             @RequestHeader(value = "X-User-Role", defaultValue = "USER") String role,
             @Valid @RequestBody CancelBookingRequest request) {
         AdminGuard.requireAdmin(role);
-        return cancellationService.cancelByAdmin(id, adminUserId, request.reason());
+        Booking cancelled = cancellationService.cancelByAdmin(id, adminUserId, request.reason());
+        notificationService.sendCancellationEmail(cancelled);
+        return cancelled;
     }
 }
