@@ -1,0 +1,14 @@
+
+→ GET http://localhost:8082/api/showtimes/screen/6ae87901a6456bb77994130d 
+  200 OK ★ 239ms time ★ 0B↑ 2B↓ size ★ 7↑ 5↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 2B
+  │ []
+  └
+
+  ┌ ✓ tests ★ 1 passed
+  │ ✓ HTTP 200
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/10-response.json
+  └

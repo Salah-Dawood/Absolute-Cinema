@@ -1,0 +1,118 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/showtimes",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: X-User-Id",
+          "type": "text/plain"
+        },
+        "key": "X-User-Id",
+        "value": "cinemasaar-api-test-admin"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "5be67e3e-01b6-49d2-b49c-78f0477f786e",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "167",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"movieId\": \"6ae871d6a6456bb77994130a\", \"screenId\": \"6ae87901a6456bb77994130d\", \"startsAt\": \"2026-11-03T15:00:00Z\", \"endsAt\": \"2026-11-03T17:40:00Z\", \"basePrice\": 4.5}"
+  },
+  "response": {
+    "id": "8c32132d-a1f5-4880-bace-d105a2fae484",
+    "status": "Conflict",
+    "code": 409,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:45 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 647,
+    "responseSize": 154,
+    "downloadedBytes": 154,
+    "body": "{\"timestamp\":\"2026-11-02T11:52:45.419741Z\",\"message\":\"Screen already has an overlapping showtime\",\"status\":409,\"path\":\"/api/showtimes\",\"error\":\"CONFLICT\"}"
+  },
+  "timestamp": "2026-11-02T11:52:45.451Z",
+  "tests": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 409",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Overlap message",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

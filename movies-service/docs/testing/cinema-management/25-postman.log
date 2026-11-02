@@ -1,0 +1,22 @@
+
+→ POST http://localhost:8082/api/showtimes 
+  404 Not Found ★ 241ms time ★ 167B↑ 128B↓ size ★ 10↑ 5↓ headers ★ 0 cookies
+  ┌ ↑ json ★ 167B
+  │ {"movieId": "000000000000000000000000", "screenId": "6
+  │ ae87901a6456bb77994130d", "startsAt": "2026-11-03T15:0
+  │ 0:00Z", "endsAt": "2026-11-03T17:40:00Z", "basePrice":
+  │  4.5}
+  └
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 128B
+  │ {"timestamp":"2026-11-02T11:52:46.203777Z","message":"
+  │ Movie not found","status":404,"path":"/api/showtimes",
+  │ "error":"NOT_FOUND"}
+  └
+
+  ┌ ✓ tests ★ 1 passed
+  │ ✓ HTTP 404
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/25-response.json
+  └

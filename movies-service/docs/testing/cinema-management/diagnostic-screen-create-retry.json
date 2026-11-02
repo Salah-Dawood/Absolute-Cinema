@@ -1,0 +1,98 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/screens",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "e87e705f-ba81-4e07-8332-2cc0c211fc5b",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "72",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"theaterId\": \"6ae8789aa6456bb77994130c\", \"name\": \"Screen 1 - API Test\"}"
+  },
+  "response": {
+    "id": "abec51b0-733c-4275-9d4a-30c24a219bb9",
+    "status": "Created",
+    "code": 201,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "101"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:50:25 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 497,
+    "responseSize": 101,
+    "downloadedBytes": 101,
+    "body": "{\"id\":\"6ae87901a6456bb77994130d\",\"name\":\"Screen 1 - API Test\",\"theaterId\":\"6ae8789aa6456bb77994130c\"}"
+  },
+  "timestamp": "2026-11-02T11:50:25.651Z",
+  "tests": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "results": []
+  },
+  "scriptLogs": []
+}

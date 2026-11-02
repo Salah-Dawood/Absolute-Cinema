@@ -1,0 +1,104 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/seats",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "71b228cc-eaff-45ba-bed2-51b38ca18aba",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "74",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"screenId\": \"6ae87901a6456bb77994130d\", \"rowLabel\": \"D\", \"seatNumber\": 1}"
+  },
+  "response": {
+    "id": "c21e97b1-344b-4ec3-91b9-996d7ad08847",
+    "status": "Conflict",
+    "code": 409,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:55 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 498,
+    "responseSize": 150,
+    "downloadedBytes": 150,
+    "body": "{\"timestamp\":\"2026-11-02T11:52:55.595428Z\",\"message\":\"Seat layout cannot change after scheduling\",\"status\":409,\"path\":\"/api/seats\",\"error\":\"CONFLICT\"}"
+  },
+  "timestamp": "2026-11-02T11:52:55.624Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 409",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

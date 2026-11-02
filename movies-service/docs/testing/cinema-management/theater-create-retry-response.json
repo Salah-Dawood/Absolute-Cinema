@@ -1,0 +1,98 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/theaters",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "5170af2a-a56d-415a-b294-16750e5a3e83",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "86",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"name\":\"CinemaSaar Saar - API Test\",\"location\":\"Saar, Northern Governorate, Bahrain\"}"
+  },
+  "response": {
+    "id": "51ae8faa-8d71-4feb-80d4-b7e253f10029",
+    "status": "Created",
+    "code": 201,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "118"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:48:43 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 312,
+    "responseSize": 118,
+    "downloadedBytes": 118,
+    "body": "{\"id\":\"6ae8789aa6456bb77994130c\",\"location\":\"Saar, Northern Governorate, Bahrain\",\"name\":\"CinemaSaar Saar - API Test\"}"
+  },
+  "timestamp": "2026-11-02T11:48:43.059Z",
+  "tests": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "results": []
+  },
+  "scriptLogs": []
+}

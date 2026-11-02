@@ -1,0 +1,20 @@
+
+→ POST http://localhost:8082/api/seats 
+  404 Not Found ★ 242ms time ★ 74B↑ 125B↓ size ★ 9↑ 5↓ headers ★ 0 cookies
+  ┌ ↑ json ★ 74B
+  │ {"screenId": "000000000000000000000000", "rowLabel": "
+  │ A", "seatNumber": 1}
+  └
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 125B
+  │ {"timestamp":"2026-11-02T11:52:37.541274Z","message":"
+  │ Screen not found","status":404,"path":"/api/seats","er
+  │ ror":"NOT_FOUND"}
+  └
+
+  ┌ ✓ tests ★ 1 passed
+  │ ✓ HTTP 404
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/15-response.json
+  └

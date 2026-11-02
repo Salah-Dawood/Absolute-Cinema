@@ -1,0 +1,104 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/seats",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "afa85d98-fd1c-4fd2-96ce-c1ae6026a728",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "74",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"screenId\": \"000000000000000000000000\", \"rowLabel\": \"A\", \"seatNumber\": 1}"
+  },
+  "response": {
+    "id": "8fcf4c53-fa8a-446f-a097-1f43fd0620be",
+    "status": "Not Found",
+    "code": 404,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:37 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 242,
+    "responseSize": 125,
+    "downloadedBytes": 125,
+    "body": "{\"timestamp\":\"2026-11-02T11:52:37.541274Z\",\"message\":\"Screen not found\",\"status\":404,\"path\":\"/api/seats\",\"error\":\"NOT_FOUND\"}"
+  },
+  "timestamp": "2026-11-02T11:52:37.572Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 404",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

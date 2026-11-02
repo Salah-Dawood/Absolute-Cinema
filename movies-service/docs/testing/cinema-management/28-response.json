@@ -1,0 +1,109 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/showtimes",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: X-User-Id",
+          "type": "text/plain"
+        },
+        "key": "X-User-Id",
+        "value": "cinemasaar-api-test-admin"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "5e312917-f95b-43cc-8c08-daafade35b25",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "166",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"movieId\": \"6ae871d6a6456bb77994130a\", \"screenId\": \"6ae87901a6456bb77994130d\", \"startsAt\": \"2026-11-03T15:00:00Z\", \"endsAt\": \"2026-11-03T17:40:00Z\", \"basePrice\": -1}"
+  },
+  "response": {
+    "id": "57461a9f-dd73-460f-a938-99ab4d51d1fa",
+    "status": "Bad Request",
+    "code": 400,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:48 GMT"
+      },
+      {
+        "key": "Connection",
+        "value": "close"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 33,
+    "responseSize": 163,
+    "downloadedBytes": 163,
+    "body": "{\"timestamp\":\"2026-11-02T11:52:48.191588Z\",\"message\":\"basePrice: must be greater than or equal to 0.00\",\"status\":400,\"path\":\"/api/showtimes\",\"error\":\"BAD_REQUEST\"}"
+  },
+  "timestamp": "2026-11-02T11:52:48.205Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 400",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

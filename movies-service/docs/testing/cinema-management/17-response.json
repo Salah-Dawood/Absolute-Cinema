@@ -1,0 +1,100 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/theaters",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "ca84624d-77e5-4aaa-a927-414d34e863a7",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "33",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"name\": \" \", \"location\": \"Saar\"}"
+  },
+  "response": {
+    "id": "f6b1534a-0b34-4685-8aeb-72106edc3cce",
+    "status": "Bad Request",
+    "code": 400,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:38 GMT"
+      },
+      {
+        "key": "Connection",
+        "value": "close"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 11,
+    "responseSize": 137,
+    "downloadedBytes": 137,
+    "body": "{\"timestamp\":\"2026-11-02T11:52:38.764171Z\",\"message\":\"name: must not be blank\",\"status\":400,\"path\":\"/api/theaters\",\"error\":\"BAD_REQUEST\"}"
+  },
+  "timestamp": "2026-11-02T11:52:38.779Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 400",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

@@ -1,0 +1,110 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/seats/generate",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "9c018aa3-6333-46e7-8bab-f21d8b8ccd9e",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "319",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": [
+      {
+        "key": "file",
+        "type": "file",
+        "src": "/Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/12-request.json"
+      }
+    ]
+  },
+  "response": {
+    "id": "093be5c0-9e6c-447a-ae51-963d720e7345",
+    "status": "Service Unavailable",
+    "code": 503,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:51:14 GMT"
+      },
+      {
+        "key": "Connection",
+        "value": "close"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 10,
+    "responseSize": 159,
+    "downloadedBytes": 159,
+    "body": "{\"timestamp\":\"2026-11-02T11:51:14.241304Z\",\"message\":\"Service temporarily unavailable\",\"status\":503,\"path\":\"/api/seats/generate\",\"error\":\"SERVICE_UNAVAILABLE\"}"
+  },
+  "timestamp": "2026-11-02T11:51:14.256Z",
+  "tests": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "results": [
+      {
+        "name": "HTTP 400",
+        "passed": false,
+        "consoleLogs": [],
+        "error": {
+          "message": "expected response to have status code 400 but got 503",
+          "name": "AssertionError"
+        }
+      }
+    ]
+  },
+  "scriptLogs": []
+}

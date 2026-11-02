@@ -1,0 +1,100 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/seats",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "37337518-d45c-4edb-b8b5-c414b48d875b",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "74",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"screenId\": \"6ae87901a6456bb77994130d\", \"rowLabel\": \"A\", \"seatNumber\": 0}"
+  },
+  "response": {
+    "id": "9376371e-fb1a-4665-aed7-cc975086bf91",
+    "status": "Bad Request",
+    "code": 400,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:38 GMT"
+      },
+      {
+        "key": "Connection",
+        "value": "close"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 20,
+    "responseSize": 157,
+    "downloadedBytes": 157,
+    "body": "{\"timestamp\":\"2026-11-02T11:52:38.192436Z\",\"message\":\"seatNumber: must be greater than or equal to 1\",\"status\":400,\"path\":\"/api/seats\",\"error\":\"BAD_REQUEST\"}"
+  },
+  "timestamp": "2026-11-02T11:52:38.206Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 400",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

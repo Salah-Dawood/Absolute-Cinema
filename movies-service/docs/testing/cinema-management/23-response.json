@@ -1,0 +1,95 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/showtimes/movie/6ae8769ca6456bb77994130b",
+    "header": [
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "1edcae22-4a5f-476f-bd84-e3a936565f3d",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      }
+    ],
+    "method": "GET",
+    "body": ""
+  },
+  "response": {
+    "id": "a2ffed0e-d2bd-4df3-91fb-c2bb1e16fbf7",
+    "status": "OK",
+    "code": 200,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "298"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:44 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 245,
+    "responseSize": 298,
+    "downloadedBytes": 298,
+    "body": "[{\"basePrice\":4.5,\"createdAt\":\"2026-11-02T11:52:42.113Z\",\"createdByUserId\":\"cinemasaar-api-test-admin\",\"endsAt\":\"2026-11-03T20:30:00Z\",\"id\":\"6ae8798aa6456bb77994132d\",\"movieId\":\"6ae8769ca6456bb77994130b\",\"screenId\":\"6ae87901a6456bb77994130d\",\"startsAt\":\"2026-11-03T18:00:00Z\",\"status\":\"SCHEDULED\"}]"
+  },
+  "timestamp": "2026-11-02T11:52:44.257Z",
+  "tests": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 200",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Contains expected persisted resource",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

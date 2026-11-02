@@ -1,0 +1,100 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/screens/6ae87901a6456bb77994130d",
+    "header": [
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "3165d756-bee1-43b0-bee6-7e7eca3ffe69",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      }
+    ],
+    "method": "GET",
+    "body": ""
+  },
+  "response": {
+    "id": "7c04eeb8-749c-4d0e-a34f-e4058695bfa3",
+    "status": "OK",
+    "code": 200,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "101"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:29 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 145,
+    "responseSize": 101,
+    "downloadedBytes": 101,
+    "body": "{\"id\":\"6ae87901a6456bb77994130d\",\"name\":\"Screen 1 - API Test\",\"theaterId\":\"6ae8789aa6456bb77994130c\"}"
+  },
+  "timestamp": "2026-11-02T11:52:29.544Z",
+  "tests": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 200",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Expected resource ID",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Screen belongs to theater",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

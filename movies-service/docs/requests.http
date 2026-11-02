@@ -1,0 +1,80 @@
+@movies = http://localhost:8082
+@movieId = replace-with-returned-id
+@theaterId = replace-with-returned-id
+@screenId = replace-with-returned-id
+@showtimeId = replace-with-returned-id
+
+### Local catalogue
+GET {{movies}}/api/movies
+
+### Import by IMDb ID (OMDB_API_KEY required on server)
+POST {{movies}}/api/movies/import/tt0133093
+
+### Mark imported movie as showing
+PATCH {{movies}}/api/movies/{{movieId}}/showing
+Content-Type: application/json
+
+{"isShowing":true}
+
+### Filter catalogue
+GET {{movies}}/api/movies/search?genre=Action&language=English&isShowing=true
+
+### Search remote metadata
+GET {{movies}}/api/movies/omdb/search?title=Matrix&page=1
+
+### Refresh imported metadata
+POST {{movies}}/api/movies/{{movieId}}/refresh
+
+### Create theater
+POST {{movies}}/api/theaters
+Content-Type: application/json
+
+{"name":"CinemaSaar","location":"Saar, Bahrain"}
+
+### Create screen
+POST {{movies}}/api/screens
+Content-Type: application/json
+
+{"theaterId":"{{theaterId}}","name":"Screen 1"}
+
+### Generate physical layout BEFORE creating showtimes
+POST {{movies}}/api/seats/generate
+Content-Type: application/json
+
+{"screenId":"{{screenId}}","rows":["A","B","C"],"seatsPerRow":10}
+
+### Read physical definitions for Member 3
+GET {{movies}}/api/seats/screen/{{screenId}}
+
+### Create showtime (use a future date)
+POST {{movies}}/api/showtimes
+X-User-Id: local-admin
+Content-Type: application/json
+
+{"movieId":"{{movieId}}","screenId":"{{screenId}}","startsAt":"2027-01-01T15:00:00Z","endsAt":"2027-01-01T17:30:00Z","basePrice":4.50}
+
+### Member 4 reads authoritative screening metadata
+GET {{movies}}/api/showtimes/{{showtimeId}}
+
+### Upcoming schedule
+GET {{movies}}/api/showtimes/upcoming
+
+### Protected cancellation (409 until booking guard integration is configured)
+PATCH {{movies}}/api/showtimes/{{showtimeId}}/status
+Content-Type: application/json
+
+{"status":"CANCELLED"}
+
+### Recommendation requests moved to ../../recommendation-service/docs/requests.http
+
+### Mark the existing Inception record as showing
+PATCH {{movies}}/api/movies/6ae871d6a6456bb77994130a/showing
+Content-Type: application/json
+
+{"isShowing":true}
+
+### Verify Inception in the complete catalogue
+GET {{movies}}/api/movies
+
+### Verify Inception in currently showing movies
+GET {{movies}}/api/movies/showing

@@ -1,0 +1,19 @@
+
+→ POST http://localhost:8082/api/theaters 
+  400 Bad Request ★ 11ms time ★ 33B↑ 137B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ json ★ 33B
+  │ {"name": " ", "location": "Saar"}
+  └
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 137B
+  │ {"timestamp":"2026-11-02T11:52:38.764171Z","message":"
+  │ name: must not be blank","status":400,"path":"/api/the
+  │ aters","error":"BAD_REQUEST"}
+  └
+
+  ┌ ✓ tests ★ 1 passed
+  │ ✓ HTTP 400
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/17-response.json
+  └

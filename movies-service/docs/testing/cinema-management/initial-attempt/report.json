@@ -1,0 +1,139 @@
+{
+  "startedAt": "2026-11-02T14:46:07.781585+03:00",
+  "baseUrl": "http://localhost:8082",
+  "rows": [
+    {
+      "feature": "Existing movie: Inception",
+      "method": "GET",
+      "endpoint": "/api/movies/6ae871d6a6456bb77994130a",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Movie is showing",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "01-response.json"
+    },
+    {
+      "feature": "Existing movie: Guardians of the Galaxy Vol. 2",
+      "method": "GET",
+      "endpoint": "/api/movies/6ae8769ca6456bb77994130b",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Movie is showing",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "02-response.json"
+    },
+    {
+      "feature": "List theaters / discover reusable fixture",
+      "method": "GET",
+      "endpoint": "/api/theaters",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "03-response.json"
+    },
+    {
+      "feature": "Create theater",
+      "method": "POST",
+      "endpoint": "/api/theaters",
+      "expected": 201,
+      "actual": 503,
+      "result": "FAIL",
+      "tests": {
+        "total": 2,
+        "passed": 0,
+        "failed": 2,
+        "results": [
+          {
+            "name": "HTTP 201",
+            "passed": false,
+            "consoleLogs": [],
+            "error": {
+              "message": "expected response to have status code 201 but got 503",
+              "name": "AssertionError"
+            }
+          },
+          {
+            "name": "Theater has an ID",
+            "passed": false,
+            "consoleLogs": [],
+            "error": {
+              "message": "expected undefined to be a string",
+              "name": "AssertionError"
+            }
+          }
+        ]
+      },
+      "exitCode": 2,
+      "evidence": "04-response.json"
+    }
+  ],
+  "fixtures": {
+    "theater": null,
+    "screen": null,
+    "seats": [],
+    "showtimes": [],
+    "created": []
+  },
+  "assertions": {
+    "total": 9,
+    "passed": 7,
+    "failed": 2
+  }
+}

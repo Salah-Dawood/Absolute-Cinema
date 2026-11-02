@@ -1,0 +1,183 @@
+{
+  "startedAt": "2026-11-02T14:49:20.873451+03:00",
+  "baseUrl": "http://localhost:8082",
+  "rows": [
+    {
+      "feature": "Existing movie: Inception",
+      "method": "GET",
+      "endpoint": "/api/movies/6ae871d6a6456bb77994130a",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Movie is showing",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "01-response.json"
+    },
+    {
+      "feature": "Existing movie: Guardians of the Galaxy Vol. 2",
+      "method": "GET",
+      "endpoint": "/api/movies/6ae8769ca6456bb77994130b",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Movie is showing",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "02-response.json"
+    },
+    {
+      "feature": "List theaters / discover reusable fixture",
+      "method": "GET",
+      "endpoint": "/api/theaters",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "03-response.json"
+    },
+    {
+      "feature": "Retrieve theater by ID",
+      "method": "GET",
+      "endpoint": "/api/theaters/6ae8789aa6456bb77994130c",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "04-response.json"
+    },
+    {
+      "feature": "List screens by theater",
+      "method": "GET",
+      "endpoint": "/api/screens/theater/6ae8789aa6456bb77994130c",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "05-response.json"
+    },
+    {
+      "feature": "Create screen in theater",
+      "method": "POST",
+      "endpoint": "/api/screens",
+      "expected": 201,
+      "actual": 503,
+      "result": "FAIL",
+      "tests": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "results": [
+          {
+            "name": "HTTP 201",
+            "passed": false,
+            "consoleLogs": [],
+            "error": {
+              "message": "expected response to have status code 201 but got 503",
+              "name": "AssertionError"
+            }
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "06-response.json"
+    }
+  ],
+  "fixtures": {
+    "theater": {
+      "id": "6ae8789aa6456bb77994130c",
+      "location": "Saar, Northern Governorate, Bahrain",
+      "name": "CinemaSaar Saar - API Test"
+    },
+    "screen": null,
+    "seats": [],
+    "showtimes": [],
+    "created": []
+  },
+  "assertions": {
+    "total": 11,
+    "passed": 10,
+    "failed": 1
+  }
+}

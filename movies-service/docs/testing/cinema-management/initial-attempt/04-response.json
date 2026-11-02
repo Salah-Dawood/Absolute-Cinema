@@ -1,0 +1,119 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/theaters",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "bd02e433-0619-42f5-a19e-d012521653d8",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "315",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": [
+      {
+        "key": "file",
+        "type": "file",
+        "src": "/Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/04-request.json"
+      }
+    ]
+  },
+  "response": {
+    "id": "ab0f91e9-cb86-4484-9d3c-685fafa6173b",
+    "status": "Service Unavailable",
+    "code": 503,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:46:10 GMT"
+      },
+      {
+        "key": "Connection",
+        "value": "close"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 35,
+    "responseSize": 153,
+    "downloadedBytes": 153,
+    "body": "{\"timestamp\":\"2026-11-02T11:46:10.594326Z\",\"message\":\"Service temporarily unavailable\",\"status\":503,\"path\":\"/api/theaters\",\"error\":\"SERVICE_UNAVAILABLE\"}"
+  },
+  "timestamp": "2026-11-02T11:46:10.616Z",
+  "tests": {
+    "total": 2,
+    "passed": 0,
+    "failed": 2,
+    "results": [
+      {
+        "name": "HTTP 201",
+        "passed": false,
+        "consoleLogs": [],
+        "error": {
+          "message": "expected response to have status code 201 but got 503",
+          "name": "AssertionError"
+        }
+      },
+      {
+        "name": "Theater has an ID",
+        "passed": false,
+        "consoleLogs": [],
+        "error": {
+          "message": "expected undefined to be a string",
+          "name": "AssertionError"
+        }
+      }
+    ]
+  },
+  "scriptLogs": []
+}

@@ -1,0 +1,61 @@
+# File inventory
+
+The original movie repository, application entry point, Maven wrapper and IDE settings were preserved. Generated build outputs are excluded. No teammate services were changed.
+
+- **Created** [.env.example](../.env.example) — Environment variable placeholders only.
+- **Modified** [.gitignore](../.gitignore) — Excluded local credential files and nested build outputs.
+- **Created** [README.md](../README.md) — IntelliJ and command-line run/build instructions.
+- **Created** [docs/API.md](API.md) — All endpoints, behavior, sample requests and responses.
+- **Created** [docs/CONTRACT.md](CONTRACT.md) — ERD adaptations and explicit team integration dependencies.
+- **Created** [docs/FILES.md](FILES.md) — Per-file change summary.
+- **Created** [docs/MIGRATION.md](MIGRATION.md) — Migration checklist for existing camelCase/string metadata.
+- **Created** [docs/VERIFICATION.md](VERIFICATION.md) — Build/test results and evidence limits.
+- **Created** [docs/openapi.json](openapi.json) — Reusable OpenAPI 3.0.3 contract for 33 movies-service operations.
+- **Created** [docs/requests.http](requests.http) — Runnable IntelliJ HTTP request sequence.
+- **Modified** [pom.xml](../pom.xml) — Added isolated Mongo test dependency; retained Java 17 and Spring Boot 4.1.2.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/client/BookingGuard.java](../src/main/java/com/cinemasaar/moviesservice/client/BookingGuard.java) — Proposed Member 4 contract; fails closed when permission cannot be established.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/client/OmdbClient.java](../src/main/java/com/cinemasaar/moviesservice/client/OmdbClient.java) — Retrieves metadata from OMDb without scraping IMDb.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/config/HttpConfig.java](../src/main/java/com/cinemasaar/moviesservice/config/HttpConfig.java) — Bounds external request times so providers cannot block requests indefinitely.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/config/MongoConfig.java](../src/main/java/com/cinemasaar/moviesservice/config/MongoConfig.java) — Transactions protect scheduling and parent-child validation from concurrent edits.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/controller/MovieController.java](../src/main/java/com/cinemasaar/moviesservice/controller/MovieController.java) — Exposes local catalogue queries and explicit OMDb import operations.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/controller/ScreenController.java](../src/main/java/com/cinemasaar/moviesservice/controller/ScreenController.java) — Exposes screens belonging to theaters.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/controller/SeatController.java](../src/main/java/com/cinemasaar/moviesservice/controller/SeatController.java) — Defines physical seats; availability belongs to Member 3.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/controller/ShowtimeController.java](../src/main/java/com/cinemasaar/moviesservice/controller/ShowtimeController.java) — Supplies screening information to booking and concurrency services.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/controller/TheaterController.java](../src/main/java/com/cinemasaar/moviesservice/controller/TheaterController.java) — Exposes theater management endpoints.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/MovieUpdateRequest.java](../src/main/java/com/cinemasaar/moviesservice/dto/MovieUpdateRequest.java) — Validates client input before applying catalogue changes.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/OmdbMovieResponse.java](../src/main/java/com/cinemasaar/moviesservice/dto/OmdbMovieResponse.java) — Keeps the provider's response format separate from our MongoDB document.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/OmdbSearchResponse.java](../src/main/java/com/cinemasaar/moviesservice/dto/OmdbSearchResponse.java) — Returns title matches and pagination information without importing anything.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/ScreenRequest.java](../src/main/java/com/cinemasaar/moviesservice/dto/ScreenRequest.java) — Validates client input before applying catalogue changes.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/SeatGenerationRequest.java](../src/main/java/com/cinemasaar/moviesservice/dto/SeatGenerationRequest.java) — Validates client input before applying catalogue changes.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/SeatRequest.java](../src/main/java/com/cinemasaar/moviesservice/dto/SeatRequest.java) — Validates client input before applying catalogue changes.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/ShowingRequest.java](../src/main/java/com/cinemasaar/moviesservice/dto/ShowingRequest.java) — Validates client input before applying catalogue changes.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/ShowtimeRequest.java](../src/main/java/com/cinemasaar/moviesservice/dto/ShowtimeRequest.java) — Validates client input before applying catalogue changes.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/StatusRequest.java](../src/main/java/com/cinemasaar/moviesservice/dto/StatusRequest.java) — Validates client input before applying catalogue changes.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/dto/TheaterRequest.java](../src/main/java/com/cinemasaar/moviesservice/dto/TheaterRequest.java) — Validates client input before applying catalogue changes.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/exception/ApiException.java](../src/main/java/com/cinemasaar/moviesservice/exception/ApiException.java) — Carries an expected API error without exposing infrastructure details.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/exception/GlobalExceptionHandler.java](../src/main/java/com/cinemasaar/moviesservice/exception/GlobalExceptionHandler.java) — Returns consistent, safe errors from all catalogue endpoints.
+- **Modified** [src/main/java/com/cinemasaar/moviesservice/model/Movie.java](../src/main/java/com/cinemasaar/moviesservice/model/Movie.java) — Maps this Java class to MongoDB movies collection
+- **Created** [src/main/java/com/cinemasaar/moviesservice/model/Screen.java](../src/main/java/com/cinemasaar/moviesservice/model/Screen.java) — Stores screen definitions in the catalogue domain.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/model/Seat.java](../src/main/java/com/cinemasaar/moviesservice/model/Seat.java) — Stores seat definitions in the catalogue domain.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/model/Showtime.java](../src/main/java/com/cinemasaar/moviesservice/model/Showtime.java) — Stores showtime definitions in the catalogue domain.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/model/ShowtimeStatus.java](../src/main/java/com/cinemasaar/moviesservice/model/ShowtimeStatus.java) — ERD-aligned MongoDB document mapping.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/model/Theater.java](../src/main/java/com/cinemasaar/moviesservice/model/Theater.java) — Stores theater definitions in the catalogue domain.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/repository/ScreenRepository.java](../src/main/java/com/cinemasaar/moviesservice/repository/ScreenRepository.java) — Handles database operations for screen records.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/repository/SeatRepository.java](../src/main/java/com/cinemasaar/moviesservice/repository/SeatRepository.java) — Handles database operations for seat records.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/repository/ShowtimeRepository.java](../src/main/java/com/cinemasaar/moviesservice/repository/ShowtimeRepository.java) — Handles database operations for showtime records.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/repository/TheaterRepository.java](../src/main/java/com/cinemasaar/moviesservice/repository/TheaterRepository.java) — Handles database operations for theater records.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/service/CatalogueService.java](../src/main/java/com/cinemasaar/moviesservice/service/CatalogueService.java) — Manages theaters, screens and physical seats only.
+- **Modified** [src/main/java/com/cinemasaar/moviesservice/service/MovieService.java](../src/main/java/com/cinemasaar/moviesservice/service/MovieService.java) — Handles catalogue queries and imported metadata without changing local cinema state.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/service/OmdbMapper.java](../src/main/java/com/cinemasaar/moviesservice/service/OmdbMapper.java) — Applies external metadata while preserving local identity, showing status and creation time.
+- **Created** [src/main/java/com/cinemasaar/moviesservice/service/ShowtimeService.java](../src/main/java/com/cinemasaar/moviesservice/service/ShowtimeService.java) — Validates movie screenings and prevents overlapping screen schedules.
+- **Modified** [src/main/resources/application.properties](../src/main/resources/application.properties) — Environment-based configuration, preserving the original movies Atlas URI and port.
+- **Created** [src/test/java/com/cinemasaar/moviesservice/CatalogueApplicationTest.java](../src/test/java/com/cinemasaar/moviesservice/CatalogueApplicationTest.java) — Loads real Boot configuration and reads an isolated catalogue through the HTTP layer.
+- **Created** [src/test/java/com/cinemasaar/moviesservice/CatalogueServiceTest.java](../src/test/java/com/cinemasaar/moviesservice/CatalogueServiceTest.java) — Isolated regression checks for CatalogueServiceTest.
+- **Created** [src/test/java/com/cinemasaar/moviesservice/HttpValidationTest.java](../src/test/java/com/cinemasaar/moviesservice/HttpValidationTest.java) — Isolated regression checks for HttpValidationTest.
+- **Created** [src/test/java/com/cinemasaar/moviesservice/MovieServiceTest.java](../src/test/java/com/cinemasaar/moviesservice/MovieServiceTest.java) — Isolated regression checks for MovieServiceTest.
+- **Modified** [src/test/java/com/cinemasaar/moviesservice/MoviesServiceApplicationTests.java](../src/test/java/com/cinemasaar/moviesservice/MoviesServiceApplicationTests.java) — Verifies Mongo field contracts without connecting to Atlas.
+- **Created** [src/test/java/com/cinemasaar/moviesservice/OmdbClientTest.java](../src/test/java/com/cinemasaar/moviesservice/OmdbClientTest.java) — Isolated regression checks for OmdbClientTest.
+- **Created** [src/test/java/com/cinemasaar/moviesservice/RepositoryTest.java](../src/test/java/com/cinemasaar/moviesservice/RepositoryTest.java) — Exercises real Spring repositories against an isolated Mongo wire-protocol fake.
+- **Created** [src/test/java/com/cinemasaar/moviesservice/ShowtimeServiceTest.java](../src/test/java/com/cinemasaar/moviesservice/ShowtimeServiceTest.java) — Isolated regression checks for ShowtimeServiceTest.
+
+Recommendation files now live in the separate sibling project; see its [file inventory](../../recommendation-service/docs/FILES.md). The nested folder was removed after independent verification. Movies business logic was unchanged during separation.

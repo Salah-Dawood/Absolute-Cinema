@@ -1,0 +1,20 @@
+
+→ POST http://localhost:8082/api/seats/generate 
+  409 Conflict ★ 583ms time ★ 74B↑ 136B↓ size ★ 9↑ 5↓ headers ★ 0 cookies
+  ┌ ↑ json ★ 74B
+  │ {"screenId": "6ae87901a6456bb77994130d", "rows": ["A"]
+  │ , "seatsPerRow": 10}
+  └
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 136B
+  │ {"timestamp":"2026-11-02T11:52:35.965593Z","message":"
+  │ Seat already exists","status":409,"path":"/api/seats/g
+  │ enerate","error":"CONFLICT"}
+  └
+
+  ┌ ✓ tests ★ 1 passed
+  │ ✓ HTTP 409
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/13-response.json
+  └

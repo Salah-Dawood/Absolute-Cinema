@@ -1,0 +1,95 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/seats/screen/6ae87901a6456bb77994130d",
+    "header": [
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "bb8421c2-780d-43a0-a0aa-d15cd5a64669",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      }
+    ],
+    "method": "GET",
+    "body": ""
+  },
+  "response": {
+    "id": "b3b159ea-4740-4c46-b5ff-d7554956c5d7",
+    "status": "OK",
+    "code": 200,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "3064"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:54 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 270,
+    "responseSize": 3064,
+    "downloadedBytes": 3064,
+    "body": "[{\"id\":\"6ae87906a6456bb77994130e\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":1},{\"id\":\"6ae87906a6456bb77994130f\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":2},{\"id\":\"6ae87906a6456bb779941310\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":3},{\"id\":\"6ae87906a6456bb779941311\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":4},{\"id\":\"6ae87906a6456bb779941312\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":5},{\"id\":\"6ae87906a6456bb779941313\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":6},{\"id\":\"6ae87906a6456bb779941314\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":7},{\"id\":\"6ae87906a6456bb779941315\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":8},{\"id\":\"6ae87906a6456bb779941316\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":9},{\"id\":\"6ae87906a6456bb779941317\",\"rowLabel\":\"A\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":10},{\"id\":\"6ae87906a6456bb779941318\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":1},{\"id\":\"6ae87906a6456bb779941319\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":2},{\"id\":\"6ae87906a6456bb77994131a\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":3},{\"id\":\"6ae87906a6456bb77994131b\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":4},{\"id\":\"6ae87906a6456bb77994131c\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":5},{\"id\":\"6ae87906a6456bb77994131d\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":6},{\"id\":\"6ae87906a6456bb77994131e\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":7},{\"id\":\"6ae87906a6456bb77994131f\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":8},{\"id\":\"6ae87906a6456bb779941320\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":9},{\"id\":\"6ae87906a6456bb779941321\",\"rowLabel\":\"B\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":10},{\"id\":\"6ae87906a6456bb779941322\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":1},{\"id\":\"6ae87906a6456bb779941323\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":2},{\"id\":\"6ae87906a6456bb779941324\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":3},{\"id\":\"6ae87906a6456bb779941325\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":4},{\"id\":\"6ae87906a6456bb779941326\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":5},{\"id\":\"6ae87906a6456bb779941327\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":6},{\"id\":\"6ae87906a6456bb779941328\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":7},{\"id\":\"6ae87906a6456bb779941329\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":8},{\"id\":\"6ae87906a6456bb77994132a\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":9},{\"id\":\"6ae87906a6456bb77994132b\",\"rowLabel\":\"C\",\"screenId\":\"6ae87901a6456bb77994130d\",\"seatNumber\":10}]"
+  },
+  "timestamp": "2026-11-02T11:52:54.583Z",
+  "tests": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 200",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Seat count unchanged",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

@@ -1,0 +1,113 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/showtimes",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: X-User-Id",
+          "type": "text/plain"
+        },
+        "key": "X-User-Id",
+        "value": "cinemasaar-api-test-admin"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "089b433c-745b-4b7e-bb68-cb33a3b4eb99",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "167",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"movieId\": \"000000000000000000000000\", \"screenId\": \"6ae87901a6456bb77994130d\", \"startsAt\": \"2026-11-03T15:00:00Z\", \"endsAt\": \"2026-11-03T17:40:00Z\", \"basePrice\": 4.5}"
+  },
+  "response": {
+    "id": "33621ce4-2343-48a4-aab6-9bf79ec7e920",
+    "status": "Not Found",
+    "code": 404,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:46 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 241,
+    "responseSize": 128,
+    "downloadedBytes": 128,
+    "body": "{\"timestamp\":\"2026-11-02T11:52:46.203777Z\",\"message\":\"Movie not found\",\"status\":404,\"path\":\"/api/showtimes\",\"error\":\"NOT_FOUND\"}"
+  },
+  "timestamp": "2026-11-02T11:52:46.234Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 404",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

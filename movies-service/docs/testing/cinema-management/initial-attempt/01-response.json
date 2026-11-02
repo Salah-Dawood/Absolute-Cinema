@@ -1,0 +1,100 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/movies/6ae871d6a6456bb77994130a",
+    "header": [
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "6cd25911-52a6-4dbc-b3da-39305594dd09",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      }
+    ],
+    "method": "GET",
+    "body": ""
+  },
+  "response": {
+    "id": "b3a41100-66f2-46f6-be9f-1bee7ea1cada",
+    "status": "OK",
+    "code": 200,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "1824"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:46:08 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 164,
+    "responseSize": 1824,
+    "downloadedBytes": 1824,
+    "body": "{\"id\":\"6ae871d6a6456bb77994130a\",\"imdbId\":\"tt1375666\",\"title\":\"Inception\",\"year\":\"2010\",\"rated\":\"PG-13\",\"released\":\"16 Jul 2010\",\"runtime\":\"148 min\",\"genre\":\"Adventure, Sci-Fi, Thriller\",\"director\":\"Christopher Nolan\",\"writer\":\"Christopher Nolan\",\"actors\":\"Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page\",\"plot\":\"Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.\",\"language\":\"English, Japanese, French\",\"country\":\"United Kingdom, United States\",\"awards\":\"Won 4 Oscars. 160 wins & 220 nominations total\",\"imdbRating\":8.8,\"imdbVotes\":2877173,\"metascore\":74,\"boxOffice\":\"$292,587,330\",\"posterUrl\":\"https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg\",\"websiteUrl\":null,\"type\":\"movie\",\"dvd\":null,\"production\":null,\"totalSeasons\":null,\"isShowing\":true,\"omdbLastSyncedAt\":\"2026-11-02T11:19:50.934Z\",\"createdAt\":\"2026-11-02T11:19:50.934Z\",\"updatedAt\":\"2026-11-02T11:22:42.119Z\"}"
+  },
+  "timestamp": "2026-11-02T11:46:08.780Z",
+  "tests": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 200",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Expected resource ID",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Movie is showing",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

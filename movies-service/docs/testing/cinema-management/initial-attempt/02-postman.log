@@ -1,0 +1,38 @@
+
+→ GET http://localhost:8082/api/movies/6ae8769ca6456bb77994130b 
+  200 OK ★ 130ms time ★ 0B↑ 1.24 kB↓ size ★ 7↑ 5↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 1.24 kB
+  │ {"id":"6ae8769ca6456bb77994130b","imdbId":"tt3896198",
+  │ "title":"Guardians of the Galaxy: Vol. 2","year":"2017
+  │ ","rated":"PG-13","released":"05 May 2017","runtime":"
+  │ 136 min","genre":"Action, Adventure, Comedy","director
+  │ ":"James Gunn","writer":"James Gunn, Dan Abnett, Andy 
+  │ Lanning","actors":"Chris Pratt, Zoe Saldaña, Dave Baut
+  │ ista","plot":"After saving Xandar from Ronan's wrath, 
+  │ the Guardians are now recognized as heroes. Now the te
+  │ am must help their leader, Star Lord, uncover the trut
+  │ h behind his true heritage. Along the way, old foes tu
+  │ rn to allies and betrayal is blooming. And the Guardia
+  │ ns find they are up against a devastating new menace w
+  │ ho is out to rule the galaxy.","language":"English","c
+  │ ountry":"United States","awards":"Nominated for 1 Osca
+  │ r. 15 wins & 62 nominations total","imdbRating":7.6,"i
+  │ mdbVotes":849165,"metascore":67,"boxOffice":"$389,813,
+  │ 101","posterUrl":"https://m.media-amazon.com/images/M/
+  │ MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXk
+  │ EyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg","website
+  │ Url":null,"type":"movie","dvd":null,"production":null,
+  │ "totalSeasons":null,"isShowing":true,"omdbLastSyncedAt
+  │ ":"2026-11-02T11:40:12.792Z","createdAt":"2026-11-02T1
+  │ 1:40:12.792Z","updatedAt":"2026-11-02T11:40:50.619Z"}
+  └
+
+  ┌ ✓ tests ★ 3 passed
+  │ ✓ HTTP 200
+  │ ✓ Expected resource ID
+  │ ✓ Movie is showing
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/02-response.json
+  └

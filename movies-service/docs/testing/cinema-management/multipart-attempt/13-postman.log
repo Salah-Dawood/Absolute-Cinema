@@ -1,0 +1,17 @@
+
+→ POST http://localhost:8082/api/seats/generate 
+  503 Service Unavailable ★ 11ms time ★ 98B↑ 159B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 159B
+  │ {"timestamp":"2026-11-02T11:51:14.769819Z","message":"
+  │ Service temporarily unavailable","status":503,"path":"
+  │ /api/seats/generate","error":"SERVICE_UNAVAILABLE"}
+  └
+
+  ┌ ✖ tests ★ 1 failed
+  │ ✖ HTTP 409
+  │   expected response to have status code 409 but got 503
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/13-response.json
+  └

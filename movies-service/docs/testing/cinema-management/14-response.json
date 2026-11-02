@@ -1,0 +1,104 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/screens",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "4192e324-ae3b-45b2-b429-f7049fc36fa6",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "70",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"theaterId\": \"000000000000000000000000\", \"name\": \"Invalid reference\"}"
+  },
+  "response": {
+    "id": "2a20139c-caca-4c10-8f38-fed77aa63438",
+    "status": "Not Found",
+    "code": 404,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:36 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 242,
+    "responseSize": 128,
+    "downloadedBytes": 128,
+    "body": "{\"timestamp\":\"2026-11-02T11:52:36.754580Z\",\"message\":\"Theater not found\",\"status\":404,\"path\":\"/api/screens\",\"error\":\"NOT_FOUND\"}"
+  },
+  "timestamp": "2026-11-02T11:52:36.779Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 404",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}
