@@ -1,0 +1,95 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/theaters",
+    "header": [
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "48393348-dd55-4b86-a33c-537a8deb4c76",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      }
+    ],
+    "method": "GET",
+    "body": ""
+  },
+  "response": {
+    "id": "b0d1baa8-4f73-4136-9d71-11e9c4a458d2",
+    "status": "OK",
+    "code": 200,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "120"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:53 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 123,
+    "responseSize": 120,
+    "downloadedBytes": 120,
+    "body": "[{\"id\":\"6ae8789aa6456bb77994130c\",\"location\":\"Saar, Northern Governorate, Bahrain\",\"name\":\"CinemaSaar Saar - API Test\"}]"
+  },
+  "timestamp": "2026-11-02T11:52:53.783Z",
+  "tests": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 200",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Contains expected persisted resource",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

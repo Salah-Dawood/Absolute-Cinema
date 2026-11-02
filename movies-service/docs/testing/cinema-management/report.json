@@ -1,0 +1,1351 @@
+{
+  "startedAt": "2026-11-02T14:52:24.753039+03:00",
+  "baseUrl": "http://localhost:8082",
+  "rows": [
+    {
+      "feature": "Existing movie: Inception",
+      "method": "GET",
+      "endpoint": "/api/movies/6ae871d6a6456bb77994130a",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Movie is showing",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "01-response.json"
+    },
+    {
+      "feature": "Existing movie: Guardians of the Galaxy Vol. 2",
+      "method": "GET",
+      "endpoint": "/api/movies/6ae8769ca6456bb77994130b",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Movie is showing",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "02-response.json"
+    },
+    {
+      "feature": "List theaters / discover reusable fixture",
+      "method": "GET",
+      "endpoint": "/api/theaters",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "03-response.json"
+    },
+    {
+      "feature": "Retrieve theater by ID",
+      "method": "GET",
+      "endpoint": "/api/theaters/6ae8789aa6456bb77994130c",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "04-response.json"
+    },
+    {
+      "feature": "List screens by theater",
+      "method": "GET",
+      "endpoint": "/api/screens/theater/6ae8789aa6456bb77994130c",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "05-response.json"
+    },
+    {
+      "feature": "Retrieve screen / verify theater reference",
+      "method": "GET",
+      "endpoint": "/api/screens/6ae87901a6456bb77994130d",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Screen belongs to theater",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "06-response.json"
+    },
+    {
+      "feature": "Retrieve all screens",
+      "method": "GET",
+      "endpoint": "/api/screens",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Contains expected persisted resource",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "07-response.json"
+    },
+    {
+      "feature": "Inspect existing physical seats",
+      "method": "GET",
+      "endpoint": "/api/seats/screen/6ae87901a6456bb77994130d",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "08-response.json"
+    },
+    {
+      "feature": "Retrieve seats / verify unique physical definitions",
+      "method": "GET",
+      "endpoint": "/api/seats/screen/6ae87901a6456bb77994130d",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Three rows of ten unique seats",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "09-response.json"
+    },
+    {
+      "feature": "Inspect screen schedule before validation",
+      "method": "GET",
+      "endpoint": "/api/showtimes/screen/6ae87901a6456bb77994130d",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "10-response.json"
+    },
+    {
+      "feature": "Reject duplicate A1 seat (case normalized)",
+      "method": "POST",
+      "endpoint": "/api/seats",
+      "expected": 409,
+      "actual": 409,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 409",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Duplicate detected",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "11-response.json"
+    },
+    {
+      "feature": "Reject duplicate seat-generation rows",
+      "method": "POST",
+      "endpoint": "/api/seats/generate",
+      "expected": 400,
+      "actual": 400,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 400",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "12-response.json"
+    },
+    {
+      "feature": "Reject duplicate seat generation",
+      "method": "POST",
+      "endpoint": "/api/seats/generate",
+      "expected": 409,
+      "actual": 409,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 409",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "13-response.json"
+    },
+    {
+      "feature": "Reject screen with missing theater",
+      "method": "POST",
+      "endpoint": "/api/screens",
+      "expected": 404,
+      "actual": 404,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 404",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "14-response.json"
+    },
+    {
+      "feature": "Reject seat with missing screen",
+      "method": "POST",
+      "endpoint": "/api/seats",
+      "expected": 404,
+      "actual": 404,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 404",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "15-response.json"
+    },
+    {
+      "feature": "Reject seat number zero",
+      "method": "POST",
+      "endpoint": "/api/seats",
+      "expected": 400,
+      "actual": 400,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 400",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "16-response.json"
+    },
+    {
+      "feature": "Reject blank theater name",
+      "method": "POST",
+      "endpoint": "/api/theaters",
+      "expected": 400,
+      "actual": 400,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 400",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "17-response.json"
+    },
+    {
+      "feature": "Create showtime: Inception",
+      "method": "POST",
+      "endpoint": "/api/showtimes",
+      "expected": 201,
+      "actual": 201,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 201",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "18-response.json"
+    },
+    {
+      "feature": "Retrieve showtime: Inception",
+      "method": "GET",
+      "endpoint": "/api/showtimes/6ae87987a6456bb77994132c",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "19-response.json"
+    },
+    {
+      "feature": "Verify showtime movie relationship: Inception",
+      "method": "GET",
+      "endpoint": "/api/showtimes/movie/6ae871d6a6456bb77994130a",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Contains expected persisted resource",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "20-response.json"
+    },
+    {
+      "feature": "Create showtime: Guardians of the Galaxy Vol. 2",
+      "method": "POST",
+      "endpoint": "/api/showtimes",
+      "expected": 201,
+      "actual": 201,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 201",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "21-response.json"
+    },
+    {
+      "feature": "Retrieve showtime: Guardians of the Galaxy Vol. 2",
+      "method": "GET",
+      "endpoint": "/api/showtimes/6ae8798aa6456bb77994132d",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Expected resource ID",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "22-response.json"
+    },
+    {
+      "feature": "Verify showtime movie relationship: Guardians of the Galaxy Vol. 2",
+      "method": "GET",
+      "endpoint": "/api/showtimes/movie/6ae8769ca6456bb77994130b",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Contains expected persisted resource",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "23-response.json"
+    },
+    {
+      "feature": "Reject overlapping showtime",
+      "method": "POST",
+      "endpoint": "/api/showtimes",
+      "expected": 409,
+      "actual": 409,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 409",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Overlap message",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "24-response.json"
+    },
+    {
+      "feature": "Reject missing movie reference",
+      "method": "POST",
+      "endpoint": "/api/showtimes",
+      "expected": 404,
+      "actual": 404,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 404",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "25-response.json"
+    },
+    {
+      "feature": "Reject missing screen reference",
+      "method": "POST",
+      "endpoint": "/api/showtimes",
+      "expected": 404,
+      "actual": 404,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 404",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "26-response.json"
+    },
+    {
+      "feature": "Reject equal start/end",
+      "method": "POST",
+      "endpoint": "/api/showtimes",
+      "expected": 400,
+      "actual": 400,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 400",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "27-response.json"
+    },
+    {
+      "feature": "Reject negative price",
+      "method": "POST",
+      "endpoint": "/api/showtimes",
+      "expected": 400,
+      "actual": 400,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 400",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "28-response.json"
+    },
+    {
+      "feature": "Reject past showtime",
+      "method": "POST",
+      "endpoint": "/api/showtimes",
+      "expected": 400,
+      "actual": 400,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 400",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "29-response.json"
+    },
+    {
+      "feature": "Reject missing creator header",
+      "method": "POST",
+      "endpoint": "/api/showtimes",
+      "expected": 400,
+      "actual": 400,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 400",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "30-response.json"
+    },
+    {
+      "feature": "Retrieve all showtimes",
+      "method": "GET",
+      "endpoint": "/api/showtimes",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Both persisted screenings present",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "31-response.json"
+    },
+    {
+      "feature": "Verify screen showtimes",
+      "method": "GET",
+      "endpoint": "/api/showtimes/screen/6ae87901a6456bb77994130d",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Both persisted screenings present",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "32-response.json"
+    },
+    {
+      "feature": "Verify theater showtimes",
+      "method": "GET",
+      "endpoint": "/api/showtimes/theater/6ae8789aa6456bb77994130c",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Both persisted screenings present",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "33-response.json"
+    },
+    {
+      "feature": "Verify upcoming showtimes",
+      "method": "GET",
+      "endpoint": "/api/showtimes/upcoming",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Both persisted screenings present",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "34-response.json"
+    },
+    {
+      "feature": "Verify screens persisted under theater",
+      "method": "GET",
+      "endpoint": "/api/screens/theater/6ae8789aa6456bb77994130c",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Contains expected persisted resource",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "35-response.json"
+    },
+    {
+      "feature": "Verify theater persisted in list",
+      "method": "GET",
+      "endpoint": "/api/theaters",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Contains expected persisted resource",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "36-response.json"
+    },
+    {
+      "feature": "Verify validation did not add seats",
+      "method": "GET",
+      "endpoint": "/api/seats/screen/6ae87901a6456bb77994130d",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS",
+      "tests": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 200",
+            "passed": true,
+            "consoleLogs": []
+          },
+          {
+            "name": "Seat count unchanged",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 0,
+      "evidence": "37-response.json"
+    },
+    {
+      "feature": "Reject layout changes after scheduling",
+      "method": "POST",
+      "endpoint": "/api/seats",
+      "expected": 409,
+      "actual": 409,
+      "result": "PASS",
+      "tests": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "results": [
+          {
+            "name": "HTTP 409",
+            "passed": true,
+            "consoleLogs": []
+          }
+        ]
+      },
+      "exitCode": 1,
+      "evidence": "38-response.json"
+    }
+  ],
+  "fixtures": {
+    "theater": {
+      "id": "6ae8789aa6456bb77994130c",
+      "location": "Saar, Northern Governorate, Bahrain",
+      "name": "CinemaSaar Saar - API Test"
+    },
+    "screen": {
+      "id": "6ae87901a6456bb77994130d",
+      "name": "Screen 1 - API Test",
+      "theaterId": "6ae8789aa6456bb77994130c"
+    },
+    "seats": [
+      {
+        "id": "6ae87906a6456bb77994130e",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 1
+      },
+      {
+        "id": "6ae87906a6456bb77994130f",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 2
+      },
+      {
+        "id": "6ae87906a6456bb779941310",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 3
+      },
+      {
+        "id": "6ae87906a6456bb779941311",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 4
+      },
+      {
+        "id": "6ae87906a6456bb779941312",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 5
+      },
+      {
+        "id": "6ae87906a6456bb779941313",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 6
+      },
+      {
+        "id": "6ae87906a6456bb779941314",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 7
+      },
+      {
+        "id": "6ae87906a6456bb779941315",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 8
+      },
+      {
+        "id": "6ae87906a6456bb779941316",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 9
+      },
+      {
+        "id": "6ae87906a6456bb779941317",
+        "rowLabel": "A",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 10
+      },
+      {
+        "id": "6ae87906a6456bb779941318",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 1
+      },
+      {
+        "id": "6ae87906a6456bb779941319",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 2
+      },
+      {
+        "id": "6ae87906a6456bb77994131a",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 3
+      },
+      {
+        "id": "6ae87906a6456bb77994131b",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 4
+      },
+      {
+        "id": "6ae87906a6456bb77994131c",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 5
+      },
+      {
+        "id": "6ae87906a6456bb77994131d",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 6
+      },
+      {
+        "id": "6ae87906a6456bb77994131e",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 7
+      },
+      {
+        "id": "6ae87906a6456bb77994131f",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 8
+      },
+      {
+        "id": "6ae87906a6456bb779941320",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 9
+      },
+      {
+        "id": "6ae87906a6456bb779941321",
+        "rowLabel": "B",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 10
+      },
+      {
+        "id": "6ae87906a6456bb779941322",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 1
+      },
+      {
+        "id": "6ae87906a6456bb779941323",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 2
+      },
+      {
+        "id": "6ae87906a6456bb779941324",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 3
+      },
+      {
+        "id": "6ae87906a6456bb779941325",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 4
+      },
+      {
+        "id": "6ae87906a6456bb779941326",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 5
+      },
+      {
+        "id": "6ae87906a6456bb779941327",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 6
+      },
+      {
+        "id": "6ae87906a6456bb779941328",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 7
+      },
+      {
+        "id": "6ae87906a6456bb779941329",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 8
+      },
+      {
+        "id": "6ae87906a6456bb77994132a",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 9
+      },
+      {
+        "id": "6ae87906a6456bb77994132b",
+        "rowLabel": "C",
+        "screenId": "6ae87901a6456bb77994130d",
+        "seatNumber": 10
+      }
+    ],
+    "showtimes": [
+      {
+        "basePrice": 4.5,
+        "createdAt": "2026-11-02T11:52:39.384088Z",
+        "createdByUserId": "cinemasaar-api-test-admin",
+        "endsAt": "2026-11-03T17:40:00Z",
+        "id": "6ae87987a6456bb77994132c",
+        "movieId": "6ae871d6a6456bb77994130a",
+        "screenId": "6ae87901a6456bb77994130d",
+        "startsAt": "2026-11-03T15:00:00Z",
+        "status": "SCHEDULED"
+      },
+      {
+        "basePrice": 4.5,
+        "createdAt": "2026-11-02T11:52:42.113499Z",
+        "createdByUserId": "cinemasaar-api-test-admin",
+        "endsAt": "2026-11-03T20:30:00Z",
+        "id": "6ae8798aa6456bb77994132d",
+        "movieId": "6ae8769ca6456bb77994130b",
+        "screenId": "6ae87901a6456bb77994130d",
+        "startsAt": "2026-11-03T18:00:00Z",
+        "status": "SCHEDULED"
+      }
+    ],
+    "created": [
+      {
+        "type": "showtime",
+        "id": "6ae87987a6456bb77994132c"
+      },
+      {
+        "type": "showtime",
+        "id": "6ae8798aa6456bb77994132d"
+      },
+      {
+        "type": "theater",
+        "id": "6ae8789aa6456bb77994130c"
+      },
+      {
+        "type": "screen",
+        "id": "6ae87901a6456bb77994130d"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994130e"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994130f"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941310"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941311"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941312"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941313"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941314"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941315"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941316"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941317"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941318"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941319"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994131a"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994131b"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994131c"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994131d"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994131e"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994131f"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941320"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941321"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941322"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941323"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941324"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941325"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941326"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941327"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941328"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb779941329"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994132a"
+      },
+      {
+        "type": "seat",
+        "id": "6ae87906a6456bb77994132b"
+      }
+    ]
+  },
+  "assertions": {
+    "total": 60,
+    "passed": 60,
+    "failed": 0
+  },
+  "runnerNote": "Postman CLI returns nonzero for expected 4xx even when tests pass. Verdicts use actual status and saved assertion results; original exitCode is preserved.",
+  "creationChecks": [
+    {
+      "feature": "Create theater",
+      "method": "POST",
+      "endpoint": "/api/theaters",
+      "expected": 201,
+      "actual": 201,
+      "result": "PASS",
+      "evidence": "theater-create-retry-response.json"
+    },
+    {
+      "feature": "Create screen",
+      "method": "POST",
+      "endpoint": "/api/screens",
+      "expected": 201,
+      "actual": 201,
+      "result": "PASS",
+      "evidence": "diagnostic-screen-create-retry.json"
+    },
+    {
+      "feature": "Generate 30 physical seats",
+      "method": "POST",
+      "endpoint": "/api/seats/generate",
+      "expected": 201,
+      "actual": 201,
+      "result": "PASS",
+      "evidence": "diagnostic-seats-generate.json"
+    }
+  ],
+  "bug": {
+    "feature": "Unsupported content type",
+    "expected": 415,
+    "actual": 503,
+    "liveResult": "FAIL",
+    "fix": "Specific exception handler added; regression test passes; running app needs restart.",
+    "causeOfInitial503": "Postman --body @file used multipart; raw JSON requests work."
+  }
+}

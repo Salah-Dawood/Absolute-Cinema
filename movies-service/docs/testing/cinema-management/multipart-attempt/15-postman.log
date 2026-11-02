@@ -1,0 +1,17 @@
+
+→ POST http://localhost:8082/api/seats 
+  503 Service Unavailable ★ 12ms time ★ 98B↑ 150B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 150B
+  │ {"timestamp":"2026-11-02T11:51:15.833021Z","message":"
+  │ Service temporarily unavailable","status":503,"path":"
+  │ /api/seats","error":"SERVICE_UNAVAILABLE"}
+  └
+
+  ┌ ✖ tests ★ 1 failed
+  │ ✖ HTTP 404
+  │   expected response to have status code 404 but got 503
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/15-response.json
+  └

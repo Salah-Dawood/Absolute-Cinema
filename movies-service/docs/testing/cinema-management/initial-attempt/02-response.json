@@ -1,0 +1,100 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/movies/6ae8769ca6456bb77994130b",
+    "header": [
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "c10bc14b-5946-41e5-ba02-37867a4403f2",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      }
+    ],
+    "method": "GET",
+    "body": ""
+  },
+  "response": {
+    "id": "292759ae-9e1f-4d5a-a8c9-82d703d3a95a",
+    "status": "OK",
+    "code": 200,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "1242"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:46:09 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 130,
+    "responseSize": 1242,
+    "downloadedBytes": 1242,
+    "body": "{\"id\":\"6ae8769ca6456bb77994130b\",\"imdbId\":\"tt3896198\",\"title\":\"Guardians of the Galaxy: Vol. 2\",\"year\":\"2017\",\"rated\":\"PG-13\",\"released\":\"05 May 2017\",\"runtime\":\"136 min\",\"genre\":\"Action, Adventure, Comedy\",\"director\":\"James Gunn\",\"writer\":\"James Gunn, Dan Abnett, Andy Lanning\",\"actors\":\"Chris Pratt, Zoe Saldaña, Dave Bautista\",\"plot\":\"After saving Xandar from Ronan's wrath, the Guardians are now recognized as heroes. Now the team must help their leader, Star Lord, uncover the truth behind his true heritage. Along the way, old foes turn to allies and betrayal is blooming. And the Guardians find they are up against a devastating new menace who is out to rule the galaxy.\",\"language\":\"English\",\"country\":\"United States\",\"awards\":\"Nominated for 1 Oscar. 15 wins & 62 nominations total\",\"imdbRating\":7.6,\"imdbVotes\":849165,\"metascore\":67,\"boxOffice\":\"$389,813,101\",\"posterUrl\":\"https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg\",\"websiteUrl\":null,\"type\":\"movie\",\"dvd\":null,\"production\":null,\"totalSeasons\":null,\"isShowing\":true,\"omdbLastSyncedAt\":\"2026-11-02T11:40:12.792Z\",\"createdAt\":\"2026-11-02T11:40:12.792Z\",\"updatedAt\":\"2026-11-02T11:40:50.619Z\"}"
+  },
+  "timestamp": "2026-11-02T11:46:09.430Z",
+  "tests": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 200",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Expected resource ID",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Movie is showing",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

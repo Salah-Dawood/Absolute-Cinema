@@ -1,0 +1,113 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/showtimes",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: X-User-Id",
+          "type": "text/plain"
+        },
+        "key": "X-User-Id",
+        "value": "cinemasaar-api-test-admin"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "ef9cc936-cd7f-4645-915b-6ef5ceafa1b0",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "177",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"movieId\": \"6ae871d6a6456bb77994130a\", \"screenId\": \"6ae87901a6456bb77994130d\", \"startsAt\": \"2026-11-03T18:00:00+03:00\", \"endsAt\": \"2026-11-03T20:40:00+03:00\", \"basePrice\": 4.5}"
+  },
+  "response": {
+    "id": "1f75fb6b-f8d3-45f5-853e-786ec362942b",
+    "status": "Created",
+    "code": 201,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "299"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:40 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 766,
+    "responseSize": 299,
+    "downloadedBytes": 299,
+    "body": "{\"basePrice\":4.5,\"createdAt\":\"2026-11-02T11:52:39.384088Z\",\"createdByUserId\":\"cinemasaar-api-test-admin\",\"endsAt\":\"2026-11-03T17:40:00Z\",\"id\":\"6ae87987a6456bb77994132c\",\"movieId\":\"6ae871d6a6456bb77994130a\",\"screenId\":\"6ae87901a6456bb77994130d\",\"startsAt\":\"2026-11-03T15:00:00Z\",\"status\":\"SCHEDULED\"}"
+  },
+  "timestamp": "2026-11-02T11:52:40.143Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 201",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

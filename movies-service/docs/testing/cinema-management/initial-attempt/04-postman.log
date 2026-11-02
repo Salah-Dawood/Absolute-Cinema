@@ -1,0 +1,19 @@
+
+→ POST http://localhost:8082/api/theaters 
+  503 Service Unavailable ★ 35ms time ★ 98B↑ 153B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 153B
+  │ {"timestamp":"2026-11-02T11:46:10.594326Z","message":"
+  │ Service temporarily unavailable","status":503,"path":"
+  │ /api/theaters","error":"SERVICE_UNAVAILABLE"}
+  └
+
+  ┌ ✖ tests ★ 2 failed
+  │ ✖ HTTP 201
+  │   expected response to have status code 201 but got 503
+  │ ✖ Theater has an ID
+  │   expected undefined to be a string
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/04-response.json
+  └

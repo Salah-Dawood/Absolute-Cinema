@@ -1,0 +1,20 @@
+
+→ POST http://localhost:8082/api/seats/generate 
+  400 Bad Request ★ 482ms time ★ 79B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ json ★ 79B
+  │ {"screenId": "6ae87901a6456bb77994130d", "rows": ["D",
+  │  "d"], "seatsPerRow": 10}
+  └
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 133B
+  │ {"timestamp":"2026-11-02T11:52:34.838968Z","message":"
+  │ Duplicate row","status":400,"path":"/api/seats/generat
+  │ e","error":"BAD_REQUEST"}
+  └
+
+  ┌ ✓ tests ★ 1 passed
+  │ ✓ HTTP 400
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/12-response.json
+  └

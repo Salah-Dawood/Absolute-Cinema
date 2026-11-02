@@ -1,0 +1,90 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/theaters",
+    "header": [
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "3f58daee-9fd1-4711-ba08-481b9c7cf43c",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      }
+    ],
+    "method": "GET",
+    "body": ""
+  },
+  "response": {
+    "id": "f114c608-2387-4e0d-acb9-91c1b122f6cf",
+    "status": "OK",
+    "code": 200,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "120"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:49:23 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 134,
+    "responseSize": 120,
+    "downloadedBytes": 120,
+    "body": "[{\"id\":\"6ae8789aa6456bb77994130c\",\"location\":\"Saar, Northern Governorate, Bahrain\",\"name\":\"CinemaSaar Saar - API Test\"}]"
+  },
+  "timestamp": "2026-11-02T11:49:23.898Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 200",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

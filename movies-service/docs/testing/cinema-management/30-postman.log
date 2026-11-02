@@ -1,0 +1,22 @@
+
+→ POST http://localhost:8082/api/showtimes 
+  400 Bad Request ★ 11ms time ★ 167B↑ 130B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ json ★ 167B
+  │ {"movieId": "6ae871d6a6456bb77994130a", "screenId": "6
+  │ ae87901a6456bb77994130d", "startsAt": "2026-11-03T15:0
+  │ 0:00Z", "endsAt": "2026-11-03T17:40:00Z", "basePrice":
+  │  4.5}
+  └
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 130B
+  │ {"timestamp":"2026-11-02T11:52:49.282484Z","message":"
+  │ Invalid request","status":400,"path":"/api/showtimes",
+  │ "error":"BAD_REQUEST"}
+  └
+
+  ┌ ✓ tests ★ 1 passed
+  │ ✓ HTTP 400
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/30-response.json
+  └

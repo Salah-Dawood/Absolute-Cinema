@@ -1,0 +1,20 @@
+
+→ GET http://localhost:8082/api/showtimes/movie/6ae8769ca6456bb77994130b 
+  200 OK ★ 245ms time ★ 0B↑ 298B↓ size ★ 7↑ 5↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 298B
+  │ [{"basePrice":4.5,"createdAt":"2026-11-02T11:52:42.113
+  │ Z","createdByUserId":"cinemasaar-api-test-admin","ends
+  │ At":"2026-11-03T20:30:00Z","id":"6ae8798aa6456bb779941
+  │ 32d","movieId":"6ae8769ca6456bb77994130b","screenId":"
+  │ 6ae87901a6456bb77994130d","startsAt":"2026-11-03T18:00
+  │ :00Z","status":"SCHEDULED"}]
+  └
+
+  ┌ ✓ tests ★ 2 passed
+  │ ✓ HTTP 200
+  │ ✓ Contains expected persisted resource
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/23-response.json
+  └

@@ -1,0 +1,95 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/theaters/6ae8789aa6456bb77994130c",
+    "header": [
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "10347cfc-28ba-4092-ba18-910e8a997e0b",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      }
+    ],
+    "method": "GET",
+    "body": ""
+  },
+  "response": {
+    "id": "c08b1153-3f39-44af-a69a-45ed7d90b3d5",
+    "status": "OK",
+    "code": 200,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "118"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:49:24 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 126,
+    "responseSize": 118,
+    "downloadedBytes": 118,
+    "body": "{\"id\":\"6ae8789aa6456bb77994130c\",\"location\":\"Saar, Northern Governorate, Bahrain\",\"name\":\"CinemaSaar Saar - API Test\"}"
+  },
+  "timestamp": "2026-11-02T11:49:24.544Z",
+  "tests": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 200",
+        "passed": true,
+        "consoleLogs": []
+      },
+      {
+        "name": "Expected resource ID",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

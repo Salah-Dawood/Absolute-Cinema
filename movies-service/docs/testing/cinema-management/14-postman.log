@@ -1,0 +1,20 @@
+
+→ POST http://localhost:8082/api/screens 
+  404 Not Found ★ 242ms time ★ 70B↑ 128B↓ size ★ 9↑ 5↓ headers ★ 0 cookies
+  ┌ ↑ json ★ 70B
+  │ {"theaterId": "000000000000000000000000", "name": "Inv
+  │ alid reference"}
+  └
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 128B
+  │ {"timestamp":"2026-11-02T11:52:36.754580Z","message":"
+  │ Theater not found","status":404,"path":"/api/screens",
+  │ "error":"NOT_FOUND"}
+  └
+
+  ┌ ✓ tests ★ 1 passed
+  │ ✓ HTTP 404
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/14-response.json
+  └

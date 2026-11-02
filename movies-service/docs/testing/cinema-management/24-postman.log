@@ -1,0 +1,23 @@
+
+→ POST http://localhost:8082/api/showtimes 
+  409 Conflict ★ 647ms time ★ 167B↑ 154B↓ size ★ 10↑ 5↓ headers ★ 0 cookies
+  ┌ ↑ json ★ 167B
+  │ {"movieId": "6ae871d6a6456bb77994130a", "screenId": "6
+  │ ae87901a6456bb77994130d", "startsAt": "2026-11-03T15:0
+  │ 0:00Z", "endsAt": "2026-11-03T17:40:00Z", "basePrice":
+  │  4.5}
+  └
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 154B
+  │ {"timestamp":"2026-11-02T11:52:45.419741Z","message":"
+  │ Screen already has an overlapping showtime","status":4
+  │ 09,"path":"/api/showtimes","error":"CONFLICT"}
+  └
+
+  ┌ ✓ tests ★ 2 passed
+  │ ✓ HTTP 409
+  │ ✓ Overlap message
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/24-response.json
+  └

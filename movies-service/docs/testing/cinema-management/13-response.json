@@ -1,0 +1,104 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/seats/generate",
+    "header": [
+      {
+        "disabled": false,
+        "description": {
+          "content": "Header: Content-Type",
+          "type": "text/plain"
+        },
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "eb0aef56-3378-4644-97f5-e0e134e44f49",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      },
+      {
+        "key": "Content-Length",
+        "value": "74",
+        "system": true
+      }
+    ],
+    "method": "POST",
+    "body": "{\"screenId\": \"6ae87901a6456bb77994130d\", \"rows\": [\"A\"], \"seatsPerRow\": 10}"
+  },
+  "response": {
+    "id": "cb5dd9d8-4bb1-44e2-be5e-d5786e24694f",
+    "status": "Conflict",
+    "code": 409,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Transfer-Encoding",
+        "value": "chunked"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:52:35 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 583,
+    "responseSize": 136,
+    "downloadedBytes": 136,
+    "body": "{\"timestamp\":\"2026-11-02T11:52:35.965593Z\",\"message\":\"Seat already exists\",\"status\":409,\"path\":\"/api/seats/generate\",\"error\":\"CONFLICT\"}"
+  },
+  "timestamp": "2026-11-02T11:52:36.000Z",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "HTTP 409",
+        "passed": true,
+        "consoleLogs": []
+      }
+    ]
+  },
+  "scriptLogs": []
+}

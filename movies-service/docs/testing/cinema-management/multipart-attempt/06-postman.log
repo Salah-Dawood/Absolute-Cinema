@@ -1,0 +1,17 @@
+
+→ GET http://localhost:8082/api/screens/6ae87901a6456bb77994130d 
+  200 OK ★ 123ms time ★ 0B↑ 101B↓ size ★ 7↑ 5↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 101B
+  │ {"id":"6ae87901a6456bb77994130d","name":"Screen 1 - AP
+  │ I Test","theaterId":"6ae8789aa6456bb77994130c"}
+  └
+
+  ┌ ✓ tests ★ 3 passed
+  │ ✓ HTTP 200
+  │ ✓ Expected resource ID
+  │ ✓ Screen belongs to theater
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/06-response.json
+  └

@@ -1,0 +1,84 @@
+{
+  "request": {
+    "url": "http://localhost:8082/api/screens/theater/6ae8789aa6456bb77994130c",
+    "header": [
+      {
+        "key": "User-Agent",
+        "value": "PostmanRuntime/7.56.1",
+        "system": true
+      },
+      {
+        "key": "Accept",
+        "value": "*/*",
+        "system": true
+      },
+      {
+        "key": "Cache-Control",
+        "value": "no-cache",
+        "system": true
+      },
+      {
+        "key": "Postman-Token",
+        "value": "e8924734-74c5-41ef-b17b-d4cbc3614c01",
+        "system": true
+      },
+      {
+        "key": "Host",
+        "value": "localhost:8082",
+        "system": true
+      },
+      {
+        "key": "Accept-Encoding",
+        "value": "gzip, deflate, br",
+        "system": true
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive",
+        "system": true
+      }
+    ],
+    "method": "GET",
+    "body": ""
+  },
+  "response": {
+    "id": "8fc0e0c6-7fde-4c7b-ab68-3f56427532e5",
+    "status": "OK",
+    "code": 200,
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Content-Length",
+        "value": "2"
+      },
+      {
+        "key": "Date",
+        "value": "Mon, 02 Nov 2026 11:50:24 GMT"
+      },
+      {
+        "key": "Keep-Alive",
+        "value": "timeout=60"
+      },
+      {
+        "key": "Connection",
+        "value": "keep-alive"
+      }
+    ],
+    "cookie": [],
+    "responseTime": 256,
+    "responseSize": 2,
+    "downloadedBytes": 2,
+    "body": "[]"
+  },
+  "timestamp": "2026-11-02T11:50:24.586Z",
+  "tests": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "results": []
+  },
+  "scriptLogs": []
+}

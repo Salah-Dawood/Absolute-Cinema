@@ -1,0 +1,19 @@
+
+→ POST http://localhost:8082/api/seats 
+  503 Service Unavailable ★ 13ms time ★ 98B↑ 150B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 150B
+  │ {"timestamp":"2026-11-02T11:51:13.723552Z","message":"
+  │ Service temporarily unavailable","status":503,"path":"
+  │ /api/seats","error":"SERVICE_UNAVAILABLE"}
+  └
+
+  ┌ ✖ tests ★ 2 failed
+  │ ✖ HTTP 409
+  │   expected response to have status code 409 but got 503
+  │ ✖ Duplicate detected
+  │   expected 'Service temporarily unavailable' to deeply equal 'Seat already exists'
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/11-response.json
+  └

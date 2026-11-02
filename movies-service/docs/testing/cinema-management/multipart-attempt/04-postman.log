@@ -1,0 +1,17 @@
+
+→ GET http://localhost:8082/api/theaters/6ae8789aa6456bb77994130c 
+  200 OK ★ 128ms time ★ 0B↑ 118B↓ size ★ 7↑ 5↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ json ★ json ★ utf8 ★ 118B
+  │ {"id":"6ae8789aa6456bb77994130c","location":"Saar, Nor
+  │ thern Governorate, Bahrain","name":"CinemaSaar Saar - 
+  │ API Test"}
+  └
+
+  ┌ ✓ tests ★ 2 passed
+  │ ✓ HTTP 200
+  │ ✓ Expected resource ID
+  └
+
+  ┌ ✓ saved ★ full response
+  │ /Users/alia/Desktop/jdb/projects/movies-service/docs/testing/cinema-management/04-response.json
+  └
