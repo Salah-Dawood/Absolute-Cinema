@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:8083
+
+### Recommendations (movies-service must be reachable; OpenAI key optional)
+POST {{baseUrl}}/api/recommendations
+Content-Type: application/json
+
+{"mood":"relaxed","genres":["Comedy"],"language":"English","energyLevel":"low","maxDurationMinutes":120,"limit":3}
+
+### Validation failure: expected 400
+POST {{baseUrl}}/api/recommendations
+Content-Type: application/json
+
+{"limit":10}
+
+### Initializr actuator health endpoint
+GET {{baseUrl}}/actuator/health

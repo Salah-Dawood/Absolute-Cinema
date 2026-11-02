@@ -1,0 +1,219 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "CinemaSaar recommendation-service",
+    "version": "1.0.0",
+    "description": "Provisional team REST contracts. Mutations require ADMIN enforcement by the gateway. No seat availability guarantees. JSON camelCase, MongoDB snake_case; string IDs."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8083"
+    }
+  ],
+  "paths": {
+    "/api/recommendations": {
+      "post": {
+        "summary": "Rank currently showing catalogue using OpenAI or deterministic fallback",
+        "operationId": "postApiRecommendations",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Referenced resource not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Duplicate, overlap or protected mutation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Provider metadata unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service unavailable or provider rate limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "x-gateway-admin-required": false,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreferencesRequest"
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:8083"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PreferencesRequest": {
+        "type": "object",
+        "properties": {
+          "mood": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "genres": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 60
+            }
+          },
+          "language": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "energyLevel": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "maxDurationMinutes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 600
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "default": 3
+          }
+        }
+      },
+      "CatalogueMovie": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "genre": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "runtime": {
+            "type": "string"
+          },
+          "plot": {
+            "type": "string"
+          },
+          "isShowing": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RecommendationResponse": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "OPENAI",
+              "FALLBACK",
+              "EMPTY_CATALOGUE"
+            ]
+          },
+          "recommendations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "movie": {
+                  "$ref": "#/components/schemas/CatalogueMovie"
+                },
+                "explanation": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
